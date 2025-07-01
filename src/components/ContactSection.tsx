@@ -4,17 +4,17 @@ const socialLinks = [
   {
     icon: TwitterIcon,
     label: 'Twitter',
-    href: '#'
+    href: 'https://x.com/logickoder'
   },
   {
     icon: LinkedInIcon,
     label: 'LinkedIn',
-    href: '#'
+    href: 'https://www.linkedin.com/in/logickoder/'
   },
   {
     icon: GitHubIcon,
     label: 'GitHub',
-    href: '#'
+    href: 'https://github.com/logickoder'
   }
 ];
 
@@ -28,7 +28,7 @@ export const ContactSection = () => {
         <h2 className="mb-8 text-center text-3xl font-bold leading-tight tracking-tight sm:mb-12 sm:text-4xl">
           Get In Touch
         </h2>
-        <form className="space-y-6">
+        <form className="space-y-6" action="https://formspree.io/f/xdobdybl" method="POST">
           <div>
             <label className="sr-only" htmlFor="name">
               Your Name
@@ -39,6 +39,7 @@ export const ContactSection = () => {
               name="name"
               placeholder="Your Name"
               type="text"
+              required
             />
           </div>
           <div>
@@ -51,6 +52,7 @@ export const ContactSection = () => {
               name="email"
               placeholder="Your Email"
               type="email"
+              required
             />
           </div>
           <div>
@@ -63,6 +65,7 @@ export const ContactSection = () => {
               name="message"
               placeholder="Your Message"
               rows={5}
+              required
             />
           </div>
           <div className="text-right">
@@ -82,6 +85,7 @@ export const ContactSection = () => {
                 key={social.label}
                 className="text-[#9cabba] transition-colors hover:text-primary"
                 href={social.href}
+                target="_blank"
               >
                 <span className="sr-only">{social.label}</span>
                 <IconComponent />
