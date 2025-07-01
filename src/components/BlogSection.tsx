@@ -84,6 +84,26 @@ export const BlogSection = () => {
         {blogPosts.length === 0 && !loading && !error && (
           <div className="text-center text-[#9cabba]">No blog posts found. Check back later!</div>
         )}
+        {blogPosts.length > 0 && (
+          <div className="mt-12 text-center">
+            <p className="mb-4 text-gray-400">Want to read more of my articles?</p>
+            <a
+              href="https://medium.com/@logickoder"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-primary/80"
+            >
+              View All Posts on Medium
+              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );
