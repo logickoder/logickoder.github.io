@@ -1,4 +1,4 @@
-# PAC
+# logickoder.github.io
 
 ## Build Setup
 
@@ -16,4 +16,4 @@ npm run build
 npm run build --report
 ```
 
-# pac-web
+# logickoder.github.io
