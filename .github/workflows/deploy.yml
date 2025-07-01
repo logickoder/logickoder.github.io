@@ -36,9 +36,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Generate icons
-        run: pnpm run generate:icons
-
       - name: Build project
         run: pnpm run build
 

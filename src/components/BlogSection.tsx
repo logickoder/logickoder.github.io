@@ -11,7 +11,6 @@ export const BlogSection = () => {
       try {
         setLoading(true);
         const posts = await fetchMediumPosts();
-        console.log('Fetched blog posts:', posts);
         setBlogPosts(posts);
         setError(null);
       } catch (err) {

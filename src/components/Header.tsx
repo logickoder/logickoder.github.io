@@ -1,8 +1,7 @@
-import { MouseEvent, useState } from 'react';
-import { Logo } from '../assets';
-import { navigationLinks } from '../data/navigation';
-import { Avatar } from './Avatar';
-import { MenuIcon } from './icons';
+import {MouseEvent, useState} from 'react';
+import {navigationLinks} from '../data/navigation';
+import {Avatar} from './Avatar';
+import {Logo, MenuIcon} from './icons';
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
