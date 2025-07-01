@@ -14,9 +14,8 @@ export const AboutSection = () => {
             frontend development.
           </p>
           <p className="text-base font-normal leading-relaxed text-gray-300 sm:text-lg sm:leading-loose">
-            With over four years of experience building cross-platform solutions, I've delivered
-            performant and business-focused applications across fintech, logistics, AI, and consumer
-            tech.
+            With 5+ years of experience building cross-platform solutions, I've delivered performant
+            and business-focused applications across fintech, logistics, AI, and consumer tech.
           </p>
           <p className="text-base font-normal leading-relaxed text-gray-300 sm:text-lg sm:leading-loose">
             My core expertise lies in developing high-quality Android and Flutter applications,

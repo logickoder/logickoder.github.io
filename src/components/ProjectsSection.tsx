@@ -199,7 +199,7 @@ export const ProjectsSection = () => {
             Interested in collaborating or learning more about my work?
           </p>
           <a
-            href="mailto:chukwudumebiorazulike@gmail.com"
+            href="mailto:jefferyorazulike@gmail.com"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-primary/80"
           >
             Let's Connect
