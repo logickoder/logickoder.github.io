@@ -1,4 +1,5 @@
 import { ArrowRightIcon } from './icons';
+import { useAnalytics } from '../hooks/useAnalytics';
 
 interface Project {
   title: string;
@@ -99,6 +100,20 @@ const projects: Project[] = [
 ];
 
 export const ProjectsSection = () => {
+  const { trackProjectView, trackExternalLink } = useAnalytics();
+
+  const handleProjectLinkClick = (project: Project, linkType: 'code' | 'demo') => {
+    trackProjectView(project.title);
+    trackExternalLink(
+      linkType === 'code' ? 'github' : 'live_demo',
+      linkType === 'code' ? project.githubUrl || '' : project.liveUrl || ''
+    );
+  };
+
+  const handleContactClick = () => {
+    trackExternalLink('email', 'mailto:jefferyorazulike@gmail.com');
+  };
+
   return (
     <section
       className="bg-[#161a1e] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24 xl:px-40"
@@ -137,6 +152,7 @@ export const ProjectsSection = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => handleProjectLinkClick(project, 'code')}
                       >
                         Code
                       </a>
@@ -147,6 +163,7 @@ export const ProjectsSection = () => {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => handleProjectLinkClick(project, 'demo')}
                       >
                         Live Demo
                       </a>
@@ -201,6 +218,7 @@ export const ProjectsSection = () => {
           <a
             href="mailto:jefferyorazulike@gmail.com"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-primary/80"
+            onClick={handleContactClick}
           >
             Let's Connect
             <ArrowRightIcon />

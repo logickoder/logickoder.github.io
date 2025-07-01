@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { BlogPost, fetchMediumPosts } from '../services/mediumService';
+import { useAnalytics } from '../hooks/useAnalytics';
 
 export const BlogSection = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { trackBlogPostClick, trackExternalLink } = useAnalytics();
 
   useEffect(() => {
     const loadPosts = async () => {
@@ -23,6 +25,15 @@ export const BlogSection = () => {
 
     void loadPosts();
   }, []);
+
+  const handleBlogPostClick = (post: BlogPost) => {
+    trackBlogPostClick(post.title);
+    trackExternalLink('medium_post', post.href);
+  };
+
+  const handleViewAllPostsClick = () => {
+    trackExternalLink('medium_profile', 'https://medium.com/@logickoder');
+  };
 
   if (loading) {
     return (
@@ -69,6 +80,7 @@ export const BlogSection = () => {
                     href={post.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => handleBlogPostClick(post)}
                   >
                     Read More →
                   </a>
@@ -91,6 +103,7 @@ export const BlogSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-primary/80"
+              onClick={handleViewAllPostsClick}
             >
               View All Posts on Medium
               <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">

@@ -1,17 +1,21 @@
-import {MouseEvent, useState} from 'react';
-import {navigationLinks} from '../data/navigation';
-import {Avatar} from './Avatar';
-import {Logo, MenuIcon} from './icons';
+import { MouseEvent, useState } from 'react';
+import { navigationLinks } from '../data/navigation';
+import { Avatar } from './Avatar';
+import { Logo, MenuIcon } from './icons';
+import { useAnalytics } from '../hooks/useAnalytics';
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { trackNavigation, trackEvent } = useAnalytics();
 
   const handleNavClick = (href: string, e: MouseEvent<HTMLElement>) => {
     e.preventDefault();
 
+    const targetId = href.replace('#', '');
+
+    trackNavigation(targetId);
     setIsMobileMenuOpen(false);
 
-    const targetId = href.replace('#', '');
     document.getElementById(targetId)?.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
@@ -19,7 +23,12 @@ export const Header = () => {
   };
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    const newState = !isMobileMenuOpen;
+    setIsMobileMenuOpen(newState);
+
+    trackEvent('mobile_menu_toggle', {
+      action: newState ? 'open' : 'close'
+    });
   };
 
   return (

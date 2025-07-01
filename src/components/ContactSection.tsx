@@ -1,4 +1,5 @@
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from './icons';
+import { useAnalytics } from '../hooks/useAnalytics';
 
 const socialLinks = [
   {
@@ -19,6 +20,16 @@ const socialLinks = [
 ];
 
 export const ContactSection = () => {
+  const { trackFormSubmission, trackExternalLink } = useAnalytics();
+
+  const handleFormSubmit = () => {
+    trackFormSubmission('contact_form');
+  };
+
+  const handleSocialClick = (platform: string, href: string) => {
+    trackExternalLink(`social_${platform.toLowerCase()}`, href);
+  };
+
   return (
     <section
       className="bg-[#161a1e] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24 xl:px-40"
@@ -28,7 +39,12 @@ export const ContactSection = () => {
         <h2 className="mb-8 text-center text-3xl font-bold leading-tight tracking-tight sm:mb-12 sm:text-4xl">
           Get In Touch
         </h2>
-        <form className="space-y-6" action="https://formspree.io/f/xdobdybl" method="POST">
+        <form
+          className="space-y-6"
+          action="https://formspree.io/f/xdobdybl"
+          method="POST"
+          onSubmit={handleFormSubmit}
+        >
           <div>
             <label className="sr-only" htmlFor="name">
               Your Name
@@ -85,7 +101,9 @@ export const ContactSection = () => {
                 key={social.label}
                 className="text-[#9cabba] transition-colors hover:text-primary"
                 href={social.href}
+                onClick={() => handleSocialClick(social.label, social.href)}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="sr-only">{social.label}</span>
                 <IconComponent />
