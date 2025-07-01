@@ -11,11 +11,13 @@ export const Avatar = ({ className = '', size = 'md' }: AvatarProps) => {
   };
 
   return (
-    <div
+    <a
       className={`aspect-square rounded-full border-2 border-primary bg-cover bg-center bg-no-repeat ${sizeClasses[size]} ${className}`}
+      href="https://github.com/logickoder"
       style={{
-        backgroundImage: `url("https://www.gravatar.com/avatar/b0c8df8b7d4c4e5f9a1e2b3c4d5e6f7a?s=200&d=mp")`
+        backgroundImage: `url("https://www.gravatar.com/avatar/671d2f99007257da5babde90df49d0fe654d4564a627b58a2fc8e0332cd0aa57?s=200&d=mp")`
       }}
+      target="_blank"
     />
   );
 };
