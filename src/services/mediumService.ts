@@ -14,7 +14,7 @@ interface CachedData {
 
 const CACHE_KEY = 'medium_posts_cache';
 
-const getCachedPosts = (): { posts: BlogPost[]; isExpired: boolean } | null => {
+function getCachedPosts(): { posts: BlogPost[]; isExpired: boolean } | null {
   try {
     const cached = localStorage.getItem(CACHE_KEY);
     if (!cached) return null;
@@ -31,9 +31,9 @@ const getCachedPosts = (): { posts: BlogPost[]; isExpired: boolean } | null => {
     console.warn('Error parsing cached Medium posts:', error);
     return null;
   }
-};
+}
 
-const setCachedPosts = (posts: BlogPost[]): void => {
+function setCachedPosts(posts: BlogPost[]): void {
   try {
     const cacheData: CachedData = {
       posts,
@@ -44,9 +44,9 @@ const setCachedPosts = (posts: BlogPost[]): void => {
     // Silently fail if localStorage is not available or full
     console.warn('Failed to cache Medium posts:', error);
   }
-};
+}
 
-export const fetchMediumPosts = async (): Promise<BlogPost[]> => {
+export async function fetchMediumPosts(): Promise<BlogPost[]> {
   // Try to get cached posts first
   const cachedData = getCachedPosts();
 
@@ -158,4 +158,4 @@ export const fetchMediumPosts = async (): Promise<BlogPost[]> => {
     // If no cache at all, re-throw the error
     throw error;
   }
-};
+}

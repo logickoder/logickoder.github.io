@@ -1,4 +1,7 @@
-export const HeroSection = () => {
+import useSmoothScroll from '../hooks/useSmoothScroll.ts';
+
+export default function HeroSection() {
+  const { scroll } = useSmoothScroll();
   return (
     <section className="px-6 py-10 sm:px-10 sm:py-16 lg:px-20 lg:py-24 xl:px-40" id="hero">
       <div className="container mx-auto max-w-screen-lg">
@@ -21,6 +24,7 @@ export const HeroSection = () => {
             <a
               className="@[480px]:h-12 @[480px]:px-6 @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] flex h-10 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-white transition-colors hover:bg-[#0a6cce] focus:ring-4 focus:ring-primary/50"
               href="#projects"
+              onClick={(e) => scroll('#projects', e)}
             >
               <span className="truncate">View Projects</span>
             </a>
@@ -29,4 +33,4 @@ export const HeroSection = () => {
       </div>
     </section>
   );
-};
+}

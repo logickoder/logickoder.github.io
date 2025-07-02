@@ -1,4 +1,4 @@
-export const AboutSection = () => {
+export default function AboutSection() {
   return (
     <section
       className="bg-[#161a1e] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24 xl:px-40"
@@ -41,4 +41,4 @@ export const AboutSection = () => {
       </div>
     </section>
   );
-};
+}

@@ -1,39 +1,6 @@
-import { ApiIcon, ArchitectureIcon, CodeIcon, DevOpsIcon, FlutterIcon, TeamIcon } from './icons';
+import skills from '../data/skills.ts';
 
-const skillCategories = [
-  {
-    icon: FlutterIcon,
-    title: 'Mobile Development',
-    skills: ['Flutter & Dart', 'Android SDK (Kotlin)', 'Jetpack Compose', 'React Native']
-  },
-  {
-    icon: CodeIcon,
-    title: 'Frontend Development',
-    skills: ['React.js & Next.js', 'Responsive UI Design', 'State Management']
-  },
-  {
-    icon: ApiIcon,
-    title: 'Backend & APIs',
-    skills: ['Firebase Services', 'Node.js', 'RESTful APIs', 'GraphQL']
-  },
-  {
-    icon: DevOpsIcon,
-    title: 'DevOps & Tooling',
-    skills: ['CI/CD (GitHub Actions)', 'Gradle Optimization', 'App Store Publishing']
-  },
-  {
-    icon: ArchitectureIcon,
-    title: 'Architecture & Practices',
-    skills: ['Clean Architecture', 'Modular Codebases', 'Performance Optimization']
-  },
-  {
-    icon: TeamIcon,
-    title: 'Collaboration & Leadership',
-    skills: ['Technical Communication', 'Documentation', 'Mentorship']
-  }
-];
-
-export const SkillsSection = () => {
+export default function SkillsSection() {
   return (
     <section className="px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24 xl:px-40" id="skills">
       <div className="container mx-auto max-w-screen-lg">
@@ -41,7 +8,7 @@ export const SkillsSection = () => {
           Skills & Expertise
         </h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {skillCategories.map((category, index) => {
+          {skills.map((category, index) => {
             const IconComponent = category.icon;
             return (
               <div
@@ -81,4 +48,4 @@ export const SkillsSection = () => {
       </div>
     </section>
   );
-};
+}

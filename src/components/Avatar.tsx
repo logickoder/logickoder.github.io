@@ -3,7 +3,7 @@ interface AvatarProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-export const Avatar = ({ className = '', size = 'md' }: AvatarProps) => {
+export default function Avatar({ className = '', size = 'md' }: AvatarProps) {
   const sizeClasses = {
     sm: 'size-8',
     md: 'size-10',
@@ -20,4 +20,4 @@ export const Avatar = ({ className = '', size = 'md' }: AvatarProps) => {
       target="_blank"
     />
   );
-};
+}

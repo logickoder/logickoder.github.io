@@ -1,25 +1,19 @@
 import { MouseEvent, useState } from 'react';
 import { navigationLinks } from '../data/navigation';
-import { Avatar } from './Avatar';
 import { Logo, MenuIcon } from './icons';
-import { useAnalytics } from '../hooks/useAnalytics';
+import Avatar from './Avatar';
+import useAnalytics from '../hooks/useAnalytics';
+import useSmoothScroll from '../hooks/useSmoothScroll.ts';
 
-export const Header = () => {
+export default function Header() {
+  const { trackEvent } = useAnalytics();
+  const { scroll } = useSmoothScroll();
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { trackNavigation, trackEvent } = useAnalytics();
 
   const handleNavClick = (href: string, e: MouseEvent<HTMLElement>) => {
-    e.preventDefault();
-
-    const targetId = href.replace('#', '');
-
-    trackNavigation(targetId);
     setIsMobileMenuOpen(false);
-
-    document.getElementById(targetId)?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
+    scroll(href, e);
   };
 
   const toggleMobileMenu = () => {
@@ -49,6 +43,7 @@ export const Header = () => {
       </div>
 
       {/* Desktop Navigation */}
+
       <nav className="hidden flex-1 items-center justify-end gap-6 sm:flex lg:gap-8">
         {navigationLinks.map((link) => (
           <a
@@ -94,4 +89,4 @@ export const Header = () => {
       )}
     </header>
   );
-};
+}

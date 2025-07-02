@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { BlogPost, fetchMediumPosts } from '../services/mediumService';
-import { useAnalytics } from '../hooks/useAnalytics';
+import useAnalytics from '../hooks/useAnalytics';
 
-export const BlogSection = () => {
+export default function BlogSection() {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -119,4 +119,4 @@ export const BlogSection = () => {
       </div>
     </section>
   );
-};
+}
