@@ -3,6 +3,7 @@ import projects, { Project } from '../data/projects.ts';
 import useAnalytics from '../hooks/useAnalytics.ts';
 import ProjectItem from '../components/ProjectItem.tsx';
 import email from '../data/email.ts';
+import BackButton from '../components/BackButton';
 
 export default function ProjectsPage() {
   const { trackExternalLink } = useAnalytics();
@@ -29,6 +30,9 @@ export default function ProjectsPage() {
       {/* Header */}
       <section className="px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24 xl:px-40">
         <div className="container mx-auto max-w-screen-xl">
+          <div className="mb-8">
+            <BackButton />
+          </div>
           <div className="text-center">
             <h1 className="mb-4 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
               All Projects
