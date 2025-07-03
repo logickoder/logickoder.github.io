@@ -4,6 +4,7 @@ import ProjectItem from './ProjectItem.tsx';
 import { useMemo } from 'react';
 import projects from '../data/projects.ts';
 import email from '../data/email.ts';
+import { Link } from 'react-router-dom';
 
 export default function ProjectsSection() {
   const { trackExternalLink } = useAnalytics();
@@ -35,20 +36,20 @@ export default function ProjectsSection() {
         <div className="mt-12 text-center">
           <p className="mb-4 text-gray-400">Want to see more of my work?</p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
-            <a
-              href="/projects"
+            <Link
+              to="/projects"
               className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-primary/80"
             >
               View All Projects
               <ArrowRightIcon />
-            </a>
-            <a
-              href={email}
+            </Link>
+            <Link
+              to={email}
               className="inline-flex items-center gap-2 rounded-lg border border-primary px-6 py-3 font-semibold text-primary transition-colors hover:bg-primary/10"
               onClick={handleContactClick}
             >
               Let's Connect
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { Project } from '../data/projects.ts';
 import useAnalytics from '../hooks/useAnalytics.ts';
 import { useCallback } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ProjectItem(props: Project) {
   const { trackProjectView, trackExternalLink } = useAnalytics();
@@ -34,26 +35,26 @@ export default function ProjectItem(props: Project) {
         <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition-all duration-300 group-hover:bg-black/40 group-hover:opacity-100">
           <div className="flex gap-3">
             {props.githubUrl && (
-              <a
+              <Link
                 className="rounded-md border border-white px-3 py-2 text-sm text-white transition-colors hover:bg-white/10"
-                href={props.githubUrl}
+                to={props.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleProjectLinkClick('code')}
               >
                 Code
-              </a>
+              </Link>
             )}
             {props.liveUrl && (
-              <a
+              <Link
                 className="rounded-md bg-primary px-3 py-2 text-sm text-white transition-colors hover:bg-primary/80"
-                href={props.liveUrl}
+                to={props.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleProjectLinkClick('demo')}
               >
                 Live Demo
-              </a>
+              </Link>
             )}
           </div>
         </div>

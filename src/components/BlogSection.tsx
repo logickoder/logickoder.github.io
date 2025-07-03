@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BlogPost, fetchMediumPosts } from '../services/mediumService';
 import useAnalytics from '../hooks/useAnalytics';
+import { Link } from 'react-router-dom';
 
 export default function BlogSection() {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
@@ -75,15 +76,15 @@ export default function BlogSection() {
                   {post.description}
                 </p>
                 <div className="flex items-center justify-between">
-                  <a
+                  <Link
                     className="text-sm font-medium text-primary hover:underline"
-                    href={post.href}
+                    to={post.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => handleBlogPostClick(post)}
                   >
                     Read More →
-                  </a>
+                  </Link>
                   <span className="text-xs text-[#9cabba]">
                     {new Date(post.pubDate).toLocaleDateString()}
                   </span>
@@ -98,8 +99,8 @@ export default function BlogSection() {
         {blogPosts.length > 0 && (
           <div className="mt-12 text-center">
             <p className="mb-4 text-gray-400">Want to read more of my articles?</p>
-            <a
-              href="https://medium.com/@logickoder"
+            <Link
+              to="https://medium.com/@logickoder"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-primary/80"
@@ -113,7 +114,7 @@ export default function BlogSection() {
                   clipRule="evenodd"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         )}
       </div>

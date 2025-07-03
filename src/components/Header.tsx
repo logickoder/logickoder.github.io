@@ -4,6 +4,7 @@ import { Logo, MenuIcon } from './icons';
 import Avatar from './Avatar';
 import useAnalytics from '../hooks/useAnalytics';
 import useSmoothScroll from '../hooks/useSmoothScroll.ts';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const { trackEvent } = useAnalytics();
@@ -46,14 +47,14 @@ export default function Header() {
 
       <nav className="hidden flex-1 items-center justify-end gap-6 sm:flex lg:gap-8">
         {navigationLinks.map((link) => (
-          <a
+          <Link
             key={link.href}
             className="text-sm font-medium leading-normal transition-colors hover:text-primary"
-            href={link.href}
+            to={link.href}
             onClick={(e) => handleNavClick(link.href, e)}
           >
             {link.label}
-          </a>
+          </Link>
         ))}
         <Avatar />
       </nav>
@@ -72,14 +73,14 @@ export default function Header() {
         <div className="absolute left-0 right-0 top-full border-b border-[#283039] bg-[#111418]/95 backdrop-blur-md sm:hidden">
           <nav className="flex flex-col py-4">
             {navigationLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 className="px-6 py-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-[#283039] hover:text-primary"
-                href={link.href}
+                to={link.href}
                 onClick={(e) => handleNavClick(link.href, e)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <div className="flex justify-center px-6 py-3">
               <Avatar size="sm" />

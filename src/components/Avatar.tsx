@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 interface AvatarProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg';
@@ -11,9 +13,9 @@ export default function Avatar({ className = '', size = 'md' }: AvatarProps) {
   };
 
   return (
-    <a
+    <Link
       className={`aspect-square rounded-full border-2 border-primary bg-cover bg-center bg-no-repeat ${sizeClasses[size]} ${className}`}
-      href="https://github.com/logickoder"
+      to="https://github.com/logickoder"
       style={{
         backgroundImage: `url("https://www.gravatar.com/avatar/671d2f99007257da5babde90df49d0fe654d4564a627b58a2fc8e0332cd0aa57?s=200&d=mp")`
       }}

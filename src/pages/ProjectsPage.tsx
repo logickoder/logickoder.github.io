@@ -4,6 +4,7 @@ import useAnalytics from '../hooks/useAnalytics.ts';
 import ProjectItem from '../components/ProjectItem.tsx';
 import email from '../data/email.ts';
 import BackButton from '../components/BackButton';
+import { Link } from 'react-router-dom';
 
 export default function ProjectsPage() {
   const { trackExternalLink } = useAnalytics();
@@ -68,14 +69,14 @@ export default function ProjectsPage() {
           <p className="mb-8 text-gray-400">
             Let's discuss how I can help bring your next project to life.
           </p>
-          <a
-            href={email}
+          <Link
+            to={email}
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 font-semibold text-white transition-colors hover:bg-primary/80"
             onClick={handleContactClick}
           >
             Start a Conversation
             <ArrowRightIcon />
-          </a>
+          </Link>
         </div>
       </section>
     </div>

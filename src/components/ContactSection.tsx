@@ -1,5 +1,6 @@
 import useAnalytics from '../hooks/useAnalytics';
 import socialLinks from '../data/socialLinks.ts';
+import { Link } from 'react-router-dom';
 
 export default function ContactSection() {
   const { trackFormSubmission, trackExternalLink } = useAnalytics();
@@ -79,17 +80,17 @@ export default function ContactSection() {
           {socialLinks.map((social) => {
             const IconComponent = social.icon;
             return (
-              <a
+              <Link
                 key={social.label}
                 className="text-[#9cabba] transition-colors hover:text-primary"
-                href={social.href}
+                to={social.href}
                 onClick={() => handleSocialClick(social.label, social.href)}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <span className="sr-only">{social.label}</span>
                 <IconComponent />
-              </a>
+              </Link>
             );
           })}
         </div>
