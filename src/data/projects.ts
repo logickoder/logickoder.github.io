@@ -35,7 +35,7 @@ const projects: Project[] = [
     image:
       'https://play-lh.googleusercontent.com/9yjyi9equy6qZWozwyNFm6_woeftLlGUtTSobAnoZKeVx5N95cho2ikQ5auh0yucAA=w416-h235-rw',
     featured: true,
-    year: '2024'
+    year: '2025'
   },
   {
     title: 'Pay with Mona Kotlin SDK',
@@ -45,7 +45,7 @@ const projects: Project[] = [
     category: 'Mobile',
     githubUrl: 'https://github.com/roryspies/pay_with_mona_kotlin',
     featured: false,
-    year: '2024'
+    year: '2025'
   },
   {
     title: 'AppStorys SDK',
@@ -56,7 +56,7 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/appversal/AppStorys-Android-SDK',
     liveUrl: 'https://appstorys.com/',
     featured: true,
-    year: '2024'
+    year: '2025'
   },
   {
     title: 'iKooK',
@@ -68,7 +68,7 @@ const projects: Project[] = [
       'https://www.upwork.com/att/download/portfolio/persons/uid/1243946981776035840/profile/projects/files/d5c7de3d-e28c-4c13-aac9-86c681fa49d4',
     liveUrl: 'https://ikook.co.uk',
     featured: false,
-    year: '2023'
+    year: '2024'
   },
   {
     title: 'Zenky',
@@ -89,7 +89,7 @@ const projects: Project[] = [
       'https://www.upwork.com/att/download/portfolio/persons/uid/1243946981776035840/profile/projects/files/a592ef31-f000-49fb-851c-0d07d2255190',
     liveUrl: 'https://play.google.com/store/apps/details?id=dev.logickoder.fuelcheck',
     featured: false,
-    year: '2022'
+    year: '2024'
   },
   {
     title: 'Farmex',
@@ -101,7 +101,7 @@ const projects: Project[] = [
       'https://play-lh.googleusercontent.com/SLxHWremOWxwoSAIvrMdHowjGUrDxShkRx7sIyeQWSsqX1HRZcz1NxsJN-HqXOS8lw=w416-h235-rw',
     liveUrl: 'https://play.google.com/store/apps/details?id=com.farmex.vendor',
     featured: false,
-    year: '2022'
+    year: '2025'
   }
 ];
 
