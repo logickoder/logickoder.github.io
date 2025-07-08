@@ -1,3 +1,3 @@
-const email = 'mailto:jefferyorazulike@gmail.com';
+const email = 'mailto:jeffery@logickoder.dev';
 
 export default email;

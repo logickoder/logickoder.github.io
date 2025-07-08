@@ -1,4 +1,4 @@
-# logickoder.github.io
+# logickoder.dev
 
 ## Build Setup
 
@@ -16,4 +16,4 @@ npm run build
 npm run build --report
 ```
 
-# logickoder.github.io
+# logickoder.dev

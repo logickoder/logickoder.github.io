@@ -18,7 +18,7 @@ const projects: Project[] = [
     technologies: ['React', 'Tailwind CSS', 'TypeScript', 'Vike'],
     category: 'Web',
     githubUrl: 'https://github.com/logickoder/incrop',
-    liveUrl: 'https://incrop.vercel.app',
+    liveUrl: 'https://incrop.logickoder.dev',
     image:
       'https://www.upwork.com/att/download/portfolio/persons/uid/1243946981776035840/profile/projects/files/583a45e8-097b-40fd-b9e1-74282671c326',
     featured: true,
