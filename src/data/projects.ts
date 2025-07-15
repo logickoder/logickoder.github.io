@@ -33,7 +33,7 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/logickoder/keyguarde',
     liveUrl: 'https://play.google.com/store/apps/details?id=dev.logickoder.keyguarde',
     image:
-      'https://play-lh.googleusercontent.com/9yjyi9equy6qZWozwyNFm6_woeftLlGUtTSobAnoZKeVx5N95cho2ikQ5auh0yucAA=w416-h235-rw',
+      'https://www.upwork.com/att/download/portfolio/persons/uid/1243946981776035840/profile/projects/files/b7b4ca57-49b5-4d5b-9ca7-b98612aabb3c',
     featured: true,
     year: '2025'
   },
@@ -71,9 +71,9 @@ const projects: Project[] = [
     year: '2024'
   },
   {
-    title: 'Zenky',
+    title: 'Zenky Launcher – Internal Use Only',
     description:
-      'A customizable Android launcher with gesture controls, and performance optimization for enhanced user experience.',
+      'A high-performance Android launcher developed for BytebyBit’s internal productivity tools. Features included advanced gesture controls, app drawer customization, and deep OS integration. (Not publicly distributed.)',
     technologies: ['Android', 'Kotlin', 'Jetpack Compose'],
     category: 'Mobile',
     featured: false,
@@ -97,11 +97,30 @@ const projects: Project[] = [
       'Farmex is a comprehensive farm management app designed to help farmers track their crops, manage resources, and optimize yields. It features real-time data collection, crop monitoring, and resource management tools.',
     technologies: ['React', 'React Native', 'Android'],
     category: 'Mobile',
-    image:
-      'https://play-lh.googleusercontent.com/SLxHWremOWxwoSAIvrMdHowjGUrDxShkRx7sIyeQWSsqX1HRZcz1NxsJN-HqXOS8lw=w416-h235-rw',
+    image: 'https://farmex.extensionafrica.com/images/farmex-logo-main-with-tagline.png',
     liveUrl: 'https://play.google.com/store/apps/details?id=com.farmex.vendor',
     featured: false,
     year: '2025'
+  },
+  {
+    title: 'ConsultLink',
+    description:
+      'A web platform connecting consultants with clients for various projects, similar to Upwork or Fiverr. Built with Next.js for optimised full-stack performance.',
+    technologies: ['React', 'Next.js'],
+    category: 'Web',
+    liveUrl: 'https://consultlink.nl',
+    featured: false,
+    year: '2024'
+  },
+  {
+    title: 'YieldMax',
+    description:
+      'A native Android farm inventory management tool that helps farmers efficiently track and manage farm yield and inventory.',
+    technologies: ['Java', 'Android', 'XML'],
+    category: 'Mobile',
+    liveUrl: 'https://play.google.com/store/apps/details?id=kitovu.com.technology',
+    featured: false,
+    year: '2024'
   }
 ];
 
