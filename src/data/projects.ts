@@ -39,8 +39,7 @@ const projects: Project[] = [
   },
   {
     title: 'Pay with Mona SDK',
-    description:
-      'An SDK for integrating payment capabilities into Android apps via the Pay with Mona platform.',
+    description: 'An SDK for integrating payment capabilities into mobile apps via the Pay with Mona platform.',
     technologies: [
       'Kotlin',
       'Jetpack Compose',
@@ -56,8 +55,7 @@ const projects: Project[] = [
   },
   {
     title: 'AppStorys SDK',
-    description:
-      'An analytics SDK for Android apps that captures view tree metadata for xml and compose and sends it over to the backend.',
+    description: 'An analytics SDK for mobile apps that captures view tree metadata and sends it over to the backend.',
     technologies: ['Kotlin', 'Android', 'Jetpack Compose', 'XML', 'Flutter'],
     category: 'Mobile',
     githubUrl: 'https://github.com/appversal/AppStorys-Android-SDK',
