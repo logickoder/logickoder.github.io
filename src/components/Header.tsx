@@ -38,7 +38,7 @@ export default function Header() {
         <div className="size-5 text-primary-500 transition-colors duration-200 group-hover:text-primary-400 sm:size-6">
           <Logo />
         </div>
-        <h2 className="bg-gradient-to-r from-white via-gray-100 to-gray-200 bg-clip-text text-lg font-bold leading-tight tracking-[-0.015em] text-transparent transition-all duration-200 group-hover:from-primary-300 group-hover:to-primary-500 supports-[not_background-clip:text]:text-white sm:text-xl">
+        <h2 className="text-lg font-bold leading-tight tracking-[-0.015em] text-white transition-all duration-200 group-hover:text-primary-300 sm:text-xl">
           logickoder
         </h2>
       </div>

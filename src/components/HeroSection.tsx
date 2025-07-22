@@ -16,7 +16,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-tr from-primary-600/5 via-transparent to-primary-400/5"></div>
 
             <div className="relative z-10 flex flex-col gap-3 text-left">
-              <h1 className="@[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-tight bg-gradient-to-r from-white via-gray-50 to-gray-200 bg-clip-text text-4xl font-black leading-tight tracking-tight text-transparent [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)] supports-[not_background-clip:text]:text-white lg:text-6xl">
+              <h1 className="@[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-tight text-4xl font-black leading-tight tracking-tight text-white lg:text-6xl">
                 Jeffery Orazulike
               </h1>
               <h2 className="@[480px]:text-lg @[480px]:font-normal @[480px]:leading-relaxed max-w-xl text-base font-normal leading-relaxed text-gray-100">
