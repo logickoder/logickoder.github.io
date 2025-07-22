@@ -41,10 +41,10 @@ export default function ProjectsPage() {
             <BackButton />
           </div>
           <div className="animate-slide-up text-center">
-            <h1 className="mb-4 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-4xl font-bold leading-tight tracking-tight text-transparent sm:text-5xl">
+            <h1 className="mb-4 bg-gradient-to-r from-white via-gray-50 to-gray-200 bg-clip-text text-4xl font-bold leading-tight tracking-tight text-transparent [text-shadow:_0_1px_2px_rgb(0_0_0_/_20%)] supports-[not_background-clip:text]:text-white sm:text-5xl">
               All Projects
             </h1>
-            <p className="mx-auto max-w-2xl text-lg text-gray-400">
+            <p className="mx-auto max-w-2xl text-lg text-gray-300">
               A comprehensive collection of my work across mobile, web, and full-stack development.
               From Android apps to React dashboards, here's everything I've built.
             </p>
@@ -61,12 +61,21 @@ export default function ProjectsPage() {
               className="mb-16 animate-fade-in"
               style={{ animationDelay: `${yearIndex * 0.1}s` }}
             >
-              <h2 className="mb-8 text-2xl font-bold text-primary-400">{year}</h2>
-              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mb-8 flex items-center gap-4">
+                <h2 className="text-2xl font-bold text-primary-400 transition-colors duration-200 hover:text-primary-300">
+                  {year}
+                </h2>
+                <div className="h-px flex-1 bg-gradient-to-r from-primary-500/30 via-primary-400/20 to-transparent"></div>
+                <span className="rounded-full border border-primary-500/20 bg-primary-500/10 px-3 py-1 text-sm font-medium text-primary-400">
+                  {projectsByYear[year].length}{' '}
+                  {projectsByYear[year].length === 1 ? 'project' : 'projects'}
+                </span>
+              </div>
+              <div className="grid auto-rows-fr grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {projectsByYear[year].map((project, index) => (
                   <div
                     key={index}
-                    className="animate-slide-up"
+                    className="h-full animate-slide-up"
                     style={{ animationDelay: `${yearIndex * 0.1 + index * 0.05}s` }}
                   >
                     <ProjectItem {...project} />
@@ -81,7 +90,7 @@ export default function ProjectsPage() {
       {/* Call to Action */}
       <section className="relative z-10 bg-gradient-to-r from-gray-800/50 to-gray-700/50 px-6 py-16 backdrop-blur-sm sm:px-10 sm:py-20 lg:px-20 lg:py-24 xl:px-40">
         <div className="container mx-auto max-w-screen-lg text-center">
-          <h2 className="mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-3xl font-bold text-transparent">
+          <h2 className="mb-4 bg-gradient-to-r from-white via-gray-100 to-gray-200 bg-clip-text text-3xl font-bold text-transparent supports-[not_background-clip:text]:text-white">
             Ready to Work Together?
           </h2>
           <p className="mb-8 text-gray-400">
