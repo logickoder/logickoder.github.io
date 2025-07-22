@@ -7,7 +7,7 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   featured?: boolean;
-  year?: string;
+  year?: number;
 }
 
 const projects: Project[] = [
@@ -22,7 +22,7 @@ const projects: Project[] = [
     image:
       'https://www.upwork.com/att/download/portfolio/persons/uid/1243946981776035840/profile/projects/files/583a45e8-097b-40fd-b9e1-74282671c326',
     featured: true,
-    year: '2024'
+    year: 2024
   },
   {
     title: 'Keyguarde',
@@ -35,28 +35,35 @@ const projects: Project[] = [
     image:
       'https://www.upwork.com/att/download/portfolio/persons/uid/1243946981776035840/profile/projects/files/b7b4ca57-49b5-4d5b-9ca7-b98612aabb3c',
     featured: true,
-    year: '2025'
+    year: 2025
   },
   {
-    title: 'Pay with Mona Kotlin SDK',
+    title: 'Pay with Mona SDK',
     description:
-      'A Kotlin SDK for integrating payment capabilities into Android apps via the Pay with Mona platform.',
-    technologies: ['Kotlin', 'Jetpack Compose', 'Android', 'Key Exchange'],
+      'An SDK for integrating payment capabilities into Android apps via the Pay with Mona platform.',
+    technologies: [
+      'Kotlin',
+      'Jetpack Compose',
+      'Android',
+      'Key Exchange',
+      'Flutter',
+      'React Native'
+    ],
     category: 'Mobile',
     githubUrl: 'https://github.com/roryspies/pay_with_mona_kotlin',
     featured: false,
-    year: '2025'
+    year: 2025
   },
   {
     title: 'AppStorys SDK',
     description:
       'An analytics SDK for Android apps that captures view tree metadata for xml and compose and sends it over to the backend.',
-    technologies: ['Kotlin', 'Android', 'Jetpack Compose', 'XML'],
+    technologies: ['Kotlin', 'Android', 'Jetpack Compose', 'XML', 'Flutter'],
     category: 'Mobile',
     githubUrl: 'https://github.com/appversal/AppStorys-Android-SDK',
     liveUrl: 'https://appstorys.com/',
     featured: true,
-    year: '2025'
+    year: 2025
   },
   {
     title: 'iKooK',
@@ -68,7 +75,7 @@ const projects: Project[] = [
       'https://www.upwork.com/att/download/portfolio/persons/uid/1243946981776035840/profile/projects/files/d5c7de3d-e28c-4c13-aac9-86c681fa49d4',
     liveUrl: 'https://ikook.co.uk',
     featured: false,
-    year: '2024'
+    year: 2024
   },
   {
     title: 'Zenky Launcher – Internal Use Only',
@@ -77,7 +84,7 @@ const projects: Project[] = [
     technologies: ['Android', 'Kotlin', 'Jetpack Compose'],
     category: 'Mobile',
     featured: false,
-    year: '2023'
+    year: 2024
   },
   {
     title: 'FuelCheck',
@@ -89,7 +96,7 @@ const projects: Project[] = [
       'https://www.upwork.com/att/download/portfolio/persons/uid/1243946981776035840/profile/projects/files/a592ef31-f000-49fb-851c-0d07d2255190',
     liveUrl: 'https://play.google.com/store/apps/details?id=dev.logickoder.fuelcheck',
     featured: false,
-    year: '2024'
+    year: 2024
   },
   {
     title: 'Farmex',
@@ -100,7 +107,7 @@ const projects: Project[] = [
     image: 'https://farmex.extensionafrica.com/images/farmex-logo-main-with-tagline.png',
     liveUrl: 'https://play.google.com/store/apps/details?id=com.farmex.vendor',
     featured: false,
-    year: '2025'
+    year: 2025
   },
   {
     title: 'ConsultLink',
@@ -110,7 +117,7 @@ const projects: Project[] = [
     category: 'Web',
     liveUrl: 'https://consultlink.nl',
     featured: false,
-    year: '2024'
+    year: 2024
   },
   {
     title: 'YieldMax',
@@ -120,7 +127,7 @@ const projects: Project[] = [
     category: 'Mobile',
     liveUrl: 'https://play.google.com/store/apps/details?id=kitovu.com.technology',
     featured: false,
-    year: '2024'
+    year: 2024
   }
 ];
 
