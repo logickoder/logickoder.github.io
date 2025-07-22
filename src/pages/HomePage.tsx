@@ -17,9 +17,16 @@ export default function HomePage() {
   }, [trackPageView]);
 
   return (
-    <div className="group/design-root dark relative flex size-full min-h-screen flex-col overflow-x-hidden">
+    <div className="group/design-root dark relative flex size-full min-h-screen flex-col overflow-x-hidden bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
+      {/* Subtle animated background dots */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -right-40 -top-40 h-80 w-80 rounded-full bg-primary-600/5 blur-3xl"></div>
+        <div className="absolute -left-40 top-1/3 h-80 w-80 rounded-full bg-primary-500/5 blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/3 h-60 w-60 rounded-full bg-primary-400/5 blur-3xl"></div>
+      </div>
+
       <Header />
-      <main className="flex-1">
+      <main className="relative z-10 flex-1">
         <HeroSection />
         <AboutSection />
         <SkillsSection />

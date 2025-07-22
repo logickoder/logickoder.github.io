@@ -29,16 +29,16 @@ export default function Header() {
   return (
     <header
       id="home"
-      className="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#283039] bg-[#111418]/80 px-6 py-4 backdrop-blur-md sm:px-10"
+      className="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-gray-700/30 bg-gray-900/80 px-6 py-4 backdrop-blur-md transition-all duration-300 sm:px-10"
     >
       <div
-        className="flex cursor-pointer items-center gap-3 text-white sm:gap-4"
+        className="group flex cursor-pointer items-center gap-3 text-white sm:gap-4"
         onClick={(e) => handleNavClick('#home', e)}
       >
-        <div className="size-5 text-primary sm:size-6">
+        <div className="size-5 text-primary-500 transition-colors duration-200 group-hover:text-primary-400 sm:size-6">
           <Logo />
         </div>
-        <h2 className="text-lg font-bold leading-tight tracking-[-0.015em] text-white sm:text-xl">
+        <h2 className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-lg font-bold leading-tight tracking-[-0.015em] text-transparent transition-all duration-200 group-hover:from-primary-300 group-hover:to-primary-500 sm:text-xl">
           logickoder
         </h2>
       </div>
@@ -49,11 +49,12 @@ export default function Header() {
         {navigationLinks.map((link) => (
           <Link
             key={link.href}
-            className="text-sm font-medium leading-normal transition-colors hover:text-primary"
+            className="group relative text-sm font-medium leading-normal text-gray-300 transition-colors duration-200 hover:text-primary-400"
             to={link.href}
             onClick={(e) => handleNavClick(link.href, e)}
           >
             {link.label}
+            <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-primary-500 to-primary-400 transition-all duration-200 group-hover:w-full"></span>
           </Link>
         ))}
         <Avatar />
@@ -61,7 +62,7 @@ export default function Header() {
 
       {/* Mobile Menu Button */}
       <button
-        className="text-white focus:outline-none sm:hidden"
+        className="text-white transition-colors duration-200 hover:text-primary-400 focus:outline-none sm:hidden"
         onClick={toggleMobileMenu}
         aria-label="Toggle mobile menu"
       >
@@ -70,20 +71,20 @@ export default function Header() {
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute left-0 right-0 top-full border-b border-[#283039] bg-[#111418]/95 backdrop-blur-md sm:hidden">
+        <div className="absolute left-0 right-0 top-full animate-fade-in border-b border-gray-700/30 bg-gray-900/95 backdrop-blur-md sm:hidden">
           <nav className="flex flex-col py-4">
             {navigationLinks.map((link) => (
               <Link
                 key={link.href}
-                className="px-6 py-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-[#283039] hover:text-primary"
+                className="px-6 py-3 text-sm font-medium leading-normal text-gray-300 transition-all duration-200 hover:bg-gray-800/50 hover:text-primary-400"
                 to={link.href}
                 onClick={(e) => handleNavClick(link.href, e)}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="flex justify-center px-6 py-3">
-              <Avatar size="sm" />
+            <div className="px-6 py-3">
+              <Avatar />
             </div>
           </nav>
         </div>
