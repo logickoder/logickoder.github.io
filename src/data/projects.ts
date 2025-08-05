@@ -28,7 +28,7 @@ const projects: Project[] = [
     title: 'Keyguarde',
     description:
       'An Android app that monitors notifications for user-defined keywords and alerts the user, helping to filter important messages from noisy chats.',
-    technologies: ['Kotlin', 'Jetpack Compose', 'Android'],
+    technologies: ['Jetpack Compose', 'Android'],
     category: 'Mobile',
     githubUrl: 'https://github.com/logickoder/keyguarde',
     liveUrl: 'https://play.google.com/store/apps/details?id=dev.logickoder.keyguarde',
@@ -42,7 +42,6 @@ const projects: Project[] = [
     description:
       'An SDK for integrating payment capabilities into mobile apps via the Pay with Mona platform.',
     technologies: [
-      'Kotlin',
       'Jetpack Compose',
       'Android',
       'Key Exchange',
@@ -58,7 +57,7 @@ const projects: Project[] = [
     title: 'AppStorys SDK',
     description:
       'An analytics SDK for mobile apps that captures view tree metadata and sends it over to the backend.',
-    technologies: ['Kotlin', 'Android', 'Jetpack Compose', 'XML', 'Flutter'],
+    technologies: ['Android', 'Jetpack Compose', 'XML', 'Flutter'],
     category: 'Mobile',
     githubUrl: 'https://github.com/appversal/AppStorys-Android-SDK',
     liveUrl: 'https://appstorys.com/',
@@ -81,7 +80,7 @@ const projects: Project[] = [
     title: 'Zenky Launcher – Internal Use Only',
     description:
       'A high-performance Android launcher developed for BytebyBit’s internal productivity tools. Features included advanced gesture controls, app drawer customization, and deep OS integration. (Not publicly distributed.)',
-    technologies: ['Android', 'Kotlin', 'Jetpack Compose'],
+    technologies: ['Android', 'Jetpack Compose'],
     category: 'Mobile',
     featured: false,
     year: 2024
@@ -90,7 +89,7 @@ const projects: Project[] = [
     title: 'FuelCheck',
     description:
       'FuelCheck is a real-time fuel tracking app I built to help users find fuel availability, prices, and queue lengths in Abuja. The app collects and updates data via both user submissions and automated processes to ensure accuracy and speed.',
-    technologies: ['Dart', 'Flutter'],
+    technologies: ['Flutter'],
     category: 'Mobile',
     image:
       'https://www.upwork.com/att/download/portfolio/persons/uid/1243946981776035840/profile/projects/files/a592ef31-f000-49fb-851c-0d07d2255190',
@@ -133,7 +132,7 @@ const projects: Project[] = [
     title: 'Transact',
     description:
       'A multi-tenant kiosk cross-platform application designed for customer transaction management and visit tracking',
-    technologies: ['Kotlin Multiplatform', 'Compose', 'Android', 'iOS'],
+    technologies: ['Kotlin Multiplatform', 'Jetpack Compose', 'Android', 'iOS'],
     category: 'Mobile',
     image: 'https://i.postimg.cc/qMT5GyTp/Screenshot-20250805-182035-Transact.png',
     featured: true,
