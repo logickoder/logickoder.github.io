@@ -1,4 +1,4 @@
-import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../components/icons';
+import { GitHubOutlineIcon, LinkedInIcon, TwitterIcon } from '../components/icons';
 
 const socialLinks = [
   {
@@ -12,7 +12,7 @@ const socialLinks = [
     href: 'https://www.linkedin.com/in/logickoder/'
   },
   {
-    icon: GitHubIcon,
+    icon: GitHubOutlineIcon,
     label: 'GitHub',
     href: 'https://github.com/logickoder'
   }
