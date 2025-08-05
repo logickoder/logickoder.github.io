@@ -13,7 +13,13 @@ export default function ProjectsSection() {
     trackExternalLink('email', email);
   };
 
-  const items = useMemo(() => projects.filter((item) => item.featured), []);
+  const items = useMemo(
+    () =>
+      projects
+        .filter((item) => item.featured)
+        .sort((a, b) => a.title.localeCompare(b.title)),
+    []
+  );
 
   return (
     <section

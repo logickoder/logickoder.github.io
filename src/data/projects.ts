@@ -39,7 +39,8 @@ const projects: Project[] = [
   },
   {
     title: 'Pay with Mona SDK',
-    description: 'An SDK for integrating payment capabilities into mobile apps via the Pay with Mona platform.',
+    description:
+      'An SDK for integrating payment capabilities into mobile apps via the Pay with Mona platform.',
     technologies: [
       'Kotlin',
       'Jetpack Compose',
@@ -50,12 +51,13 @@ const projects: Project[] = [
     ],
     category: 'Mobile',
     githubUrl: 'https://github.com/roryspies/pay_with_mona_kotlin',
-    featured: false,
+    featured: true,
     year: 2025
   },
   {
     title: 'AppStorys SDK',
-    description: 'An analytics SDK for mobile apps that captures view tree metadata and sends it over to the backend.',
+    description:
+      'An analytics SDK for mobile apps that captures view tree metadata and sends it over to the backend.',
     technologies: ['Kotlin', 'Android', 'Jetpack Compose', 'XML', 'Flutter'],
     category: 'Mobile',
     githubUrl: 'https://github.com/appversal/AppStorys-Android-SDK',
@@ -125,6 +127,16 @@ const projects: Project[] = [
     category: 'Mobile',
     liveUrl: 'https://play.google.com/store/apps/details?id=kitovu.com.technology',
     featured: false,
+    year: 2024
+  },
+  {
+    title: 'Transact',
+    description:
+      'A multi-tenant kiosk cross-platform application designed for customer transaction management and visit tracking',
+    technologies: ['Kotlin Multiplatform', 'Compose', 'Android', 'iOS'],
+    category: 'Mobile',
+    image: 'https://i.postimg.cc/qMT5GyTp/Screenshot-20250805-182035-Transact.png',
+    featured: true,
     year: 2024
   }
 ];

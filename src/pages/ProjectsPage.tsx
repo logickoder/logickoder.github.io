@@ -5,6 +5,7 @@ import ProjectItem from '../components/ProjectItem.tsx';
 import email from '../data/email.ts';
 import BackButton from '../components/BackButton';
 import { Link } from 'react-router-dom';
+import { useMemo } from 'react';
 
 export default function ProjectsPage() {
   const { trackExternalLink } = useAnalytics();
@@ -13,18 +14,32 @@ export default function ProjectsPage() {
     trackExternalLink('email', email);
   };
 
-  // Group projects by year
-  const projectsByYear = projects.reduce(
-    (acc, project) => {
-      const year = project.year || 'Other';
-      if (!acc[year]) acc[year] = [];
-      acc[year].push(project);
-      return acc;
-    },
-    {} as Record<string, Project[]>
-  );
+  const projectsByYear = useMemo(() => {
+    const grouped = projects.reduce(
+      (acc, project) => {
+        const year = project.year || 'Other';
+        if (!acc[year]) acc[year] = [];
+        acc[year].push(project);
+        return acc;
+      },
+      {} as Record<string, Project[]>
+    );
 
-  const years = Object.keys(projectsByYear).sort((a, b) => b.localeCompare(a));
+    Object.keys(grouped).forEach((year) => {
+      grouped[year].sort((a, b) => {
+        if ((b.featured ? 1 : 0) - (a.featured ? 1 : 0) !== 0) {
+          return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
+        }
+        return a.title.localeCompare(b.title);
+      });
+    });
+    return grouped;
+  }, []);
+
+  const years = useMemo(
+    () => Object.keys(projectsByYear).sort((a, b) => b.localeCompare(a)),
+    [projectsByYear]
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-white">
