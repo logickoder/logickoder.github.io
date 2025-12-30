@@ -11,32 +11,32 @@ const skills = [
   {
     icon: FlutterIcon,
     title: 'Mobile Development',
-    skills: ['Flutter & Dart', 'Android SDK (Kotlin)', 'Jetpack Compose', 'React Native']
+    skills: ['Android (SDK, Jetpack Compose)', 'Flutter', 'React Native']
   },
   {
     icon: CodeIcon,
-    title: 'Frontend Development',
-    skills: ['React.js & Next.js', 'Responsive UI Design', 'State Management']
+    title: 'Languages',
+    skills: ['Kotlin', 'Java', 'Dart', 'JavaScript', 'TypeScript']
   },
   {
     icon: ApiIcon,
-    title: 'Backend & APIs',
-    skills: ['Firebase Services', 'Node.js', 'RESTful APIs', 'GraphQL']
+    title: 'Frontend Development',
+    skills: ['React', 'Next.js']
   },
   {
     icon: DevOpsIcon,
-    title: 'DevOps & Tooling',
-    skills: ['CI/CD (GitHub Actions)', 'Gradle Optimization', 'App Store Publishing']
+    title: 'Backend & APIs',
+    skills: ['Node.js (Express)', 'MongoDB', 'PostgreSQL', 'Spring Boot']
   },
   {
     icon: ArchitectureIcon,
     title: 'Architecture & Practices',
-    skills: ['Clean Architecture', 'Modular Codebases', 'Performance Optimization']
+    skills: ['Clean Architecture', 'Modular Design']
   },
   {
     icon: TeamIcon,
-    title: 'Collaboration & Leadership',
-    skills: ['Technical Communication', 'Documentation', 'Mentorship']
+    title: 'CI/CD & Tools',
+    skills: ['GitHub Actions', 'Xcode Cloud', 'Android Studio', 'VS Code', 'IntelliJ IDEA', 'Git']
   }
 ];
 

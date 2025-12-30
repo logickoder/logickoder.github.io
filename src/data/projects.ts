@@ -12,22 +12,9 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    title: 'InCrop',
-    description:
-      'A web app to share cropped conversations while removing unnecessary parts, keeping only the main areas visible.',
-    technologies: ['React', 'Tailwind CSS', 'TypeScript', 'Vike'],
-    category: 'Web',
-    githubUrl: 'https://github.com/logickoder/incrop',
-    liveUrl: 'https://incrop.logickoder.dev',
-    image:
-      'https://www.upwork.com/att/download/portfolio/persons/uid/1243946981776035840/profile/projects/files/583a45e8-097b-40fd-b9e1-74282671c326',
-    featured: true,
-    year: 2024
-  },
-  {
     title: 'Keyguarde',
     description:
-      'An Android app that monitors notifications for user-defined keywords and alerts the user, helping to filter important messages from noisy chats.',
+      'An Android app to monitor notifications for user-defined keywords, alerting users of relevant messages.',
     technologies: ['Jetpack Compose', 'Android'],
     category: 'Mobile',
     githubUrl: 'https://github.com/logickoder/keyguarde',
@@ -38,30 +25,64 @@ const projects: Project[] = [
     year: 2025
   },
   {
-    title: 'Pay with Mona SDK',
+    title: 'InCrop',
     description:
-      'An SDK for integrating payment capabilities into mobile apps via the Pay with Mona platform.',
-    technologies: [
-      'Jetpack Compose',
-      'Android',
-      'Key Exchange',
-      'Flutter',
-      'React Native'
-    ],
+      'Web app for cropping and sharing conversation screenshots, with automatic focus on main content.',
+    technologies: ['React.js', 'Tailwind CSS', 'TypeScript'],
+    category: 'Web',
+    githubUrl: 'https://github.com/logickoder/incrop',
+    liveUrl: 'https://incrop.logickoder.dev',
+    image:
+      'https://www.upwork.com/att/download/portfolio/persons/uid/1243946981776035840/profile/projects/files/583a45e8-097b-40fd-b9e1-74282671c326',
+    featured: true,
+    year: 2024
+  },
+  {
+    title: 'Transact',
+    description:
+      'A multi-tenant kiosk cross-platform application designed for customer transaction management and visit tracking.',
+    technologies: ['Kotlin Multiplatform', 'Jetpack Compose'],
+    category: 'Mobile',
+    featured: true,
+    year: 2024
+  },
+  {
+    title: 'FuelCheck',
+    description:
+      'Real-time fuel tracking app displaying prices, availability, and queue lengths in Abuja.',
+    technologies: ['Flutter'],
+    category: 'Mobile',
+    image:
+      'https://www.upwork.com/att/download/portfolio/persons/uid/1243946981776035840/profile/projects/files/a592ef31-f000-49fb-851c-0d07d2255190',
+    liveUrl: 'https://play.google.com/store/apps/details?id=dev.logickoder.fuelcheck',
+    featured: true,
+    year: 2024
+  },
+  {
+    title: 'Farmex & YieldMax',
+    description: 'Apps for farm inventory and yield management, built in React Native and Java.',
+    technologies: ['React Native', 'Java', 'Android'],
+    category: 'Mobile',
+    featured: false,
+    year: 2023
+  },
+  {
+    title: 'Pay with Mona SDK',
+    description: 'SDK enabling seamless payment integration for the Mona platform.',
+    technologies: ['Android', 'Flutter', 'React Native'],
     category: 'Mobile',
     githubUrl: 'https://github.com/roryspies/pay_with_mona_kotlin',
-    featured: true,
+    featured: false,
     year: 2025
   },
   {
     title: 'AppStorys SDK',
-    description:
-      'An analytics SDK for mobile apps that captures view tree metadata and sends it over to the backend.',
-    technologies: ['Android', 'Jetpack Compose', 'XML', 'Flutter'],
+    description: 'Analytics SDK capturing view tree metadata for mobile apps.',
+    technologies: ['Android', 'Flutter', 'React Native'],
     category: 'Mobile',
     githubUrl: 'https://github.com/appversal/AppStorys-Android-SDK',
     liveUrl: 'https://appstorys.com/',
-    featured: true,
+    featured: false,
     year: 2025
   },
   {
@@ -79,65 +100,13 @@ const projects: Project[] = [
   {
     title: 'Zenky Launcher – Internal Use Only',
     description:
-      'A high-performance Android launcher developed for BytebyBit’s internal productivity tools. Features included advanced gesture controls, app drawer customization, and deep OS integration. (Not publicly distributed.)',
+      'A high-performance Android launcher developed for BytebyBit’s internal productivity tools. Features included advanced gesture controls, app drawer customization, and deep OS integration.',
     technologies: ['Android', 'Jetpack Compose'],
     category: 'Mobile',
     featured: false,
-    year: 2024
-  },
-  {
-    title: 'FuelCheck',
-    description:
-      'FuelCheck is a real-time fuel tracking app I built to help users find fuel availability, prices, and queue lengths in Abuja. The app collects and updates data via both user submissions and automated processes to ensure accuracy and speed.',
-    technologies: ['Flutter'],
-    category: 'Mobile',
-    image:
-      'https://www.upwork.com/att/download/portfolio/persons/uid/1243946981776035840/profile/projects/files/a592ef31-f000-49fb-851c-0d07d2255190',
-    liveUrl: 'https://play.google.com/store/apps/details?id=dev.logickoder.fuelcheck',
-    featured: false,
-    year: 2024
-  },
-  {
-    title: 'Farmex',
-    description:
-      'Farmex is a comprehensive farm management app designed to help farmers track their crops, manage resources, and optimize yields. It features real-time data collection, crop monitoring, and resource management tools.',
-    technologies: ['React', 'React Native', 'Android'],
-    category: 'Mobile',
-    image: 'https://farmex.extensionafrica.com/images/farmex-logo-main-with-tagline.png',
-    liveUrl: 'https://play.google.com/store/apps/details?id=com.farmex.vendor',
-    featured: false,
-    year: 2025
-  },
-  {
-    title: 'ConsultLink',
-    description:
-      'A web platform connecting consultants with clients for various projects, similar to Upwork or Fiverr. Built with Next.js for optimised full-stack performance.',
-    technologies: ['React', 'Next.js'],
-    category: 'Web',
-    liveUrl: 'https://consultlink.nl',
-    featured: false,
-    year: 2024
-  },
-  {
-    title: 'YieldMax',
-    description:
-      'A native Android farm inventory management tool that helps farmers efficiently track and manage farm yield and inventory.',
-    technologies: ['Java', 'Android', 'XML'],
-    category: 'Mobile',
-    liveUrl: 'https://play.google.com/store/apps/details?id=kitovu.com.technology',
-    featured: false,
-    year: 2024
-  },
-  {
-    title: 'Transact',
-    description:
-      'A multi-tenant kiosk cross-platform application designed for customer transaction management and visit tracking',
-    technologies: ['Kotlin Multiplatform', 'Jetpack Compose', 'Android', 'iOS'],
-    category: 'Mobile',
-    image: 'https://i.postimg.cc/qMT5GyTp/Screenshot-20250805-182035-Transact.png',
-    featured: true,
     year: 2024
   }
 ];
 
 export default projects;
+

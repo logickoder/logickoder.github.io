@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { BlogPost, fetchMediumPosts } from '../services/mediumService';
 import useAnalytics from '../hooks/useAnalytics';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export default function BlogSection() {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
@@ -44,7 +45,7 @@ export default function BlogSection() {
             Blog
           </h2>
           <div className="flex justify-center">
-            <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-primary"></div>
+            <div className="border-primary h-12 w-12 animate-spin rounded-full border-b-2"></div>
           </div>
         </div>
       </section>
@@ -54,14 +55,24 @@ export default function BlogSection() {
   return (
     <section className="px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24 xl:px-40" id="blog">
       <div className="container mx-auto max-w-screen-lg">
-        <h2 className="mb-8 text-center text-3xl font-bold leading-tight tracking-tight sm:mb-12 sm:text-4xl">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-8 text-center text-3xl font-bold leading-tight tracking-tight sm:mb-12 sm:text-4xl"
+        >
           Blog
-        </h2>
+        </motion.h2>
         {error && <div className="mb-8 text-center text-red-400">{error}</div>}
         <div className="space-y-10 sm:space-y-12">
-          {blogPosts.map((post) => (
-            <article
+          {blogPosts.map((post, index) => (
+            <motion.article
               key={post.guid}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex flex-col items-center gap-6 rounded-xl bg-[#1b2127] p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl sm:flex-row sm:gap-8"
             >
               <div
@@ -77,7 +88,7 @@ export default function BlogSection() {
                 </p>
                 <div className="flex items-center justify-between">
                   <Link
-                    className="text-sm font-medium text-primary hover:underline"
+                    className="text-primary text-sm font-medium hover:underline"
                     to={post.href}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -90,32 +101,31 @@ export default function BlogSection() {
                   </span>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
         {blogPosts.length === 0 && !loading && !error && (
           <div className="text-center text-[#9cabba]">No blog posts found. Check back later!</div>
         )}
         {blogPosts.length > 0 && (
-          <div className="mt-12 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-12 text-center"
+          >
             <p className="mb-4 text-gray-400">Want to read more of my articles?</p>
             <Link
               to="https://medium.com/@logickoder"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-primary/80"
+              className="bg-primary hover:bg-primary/80 inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-white transition-colors"
               onClick={handleViewAllPostsClick}
             >
-              View All Posts on Medium
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              Visit My Medium Profile
             </Link>
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

@@ -6,6 +6,7 @@ import projects from '../data/projects.ts';
 import email from '../data/email.ts';
 import { Link } from 'react-router-dom';
 import useProjectActions from '../hooks/useProjectActions.ts';
+import { motion } from 'framer-motion';
 
 export default function ProjectsSection() {
   const { handleProjectClick, handleContactClick, isModalOpen, handleCloseModal, selectedProject } =
@@ -23,17 +24,37 @@ export default function ProjectsSection() {
         id="projects"
       >
         <div className="container mx-auto max-w-screen-lg">
-          <h2 className="mb-8 text-center text-3xl font-bold leading-tight tracking-tight sm:mb-12 sm:text-4xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-8 text-center text-3xl font-bold leading-tight tracking-tight sm:mb-12 sm:text-4xl"
+          >
             Featured Projects
-          </h2>
+          </motion.h2>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {items.map((project, index) => (
-              <ProjectItem key={index} {...project} onProjectClick={handleProjectClick} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <ProjectItem {...project} onProjectClick={handleProjectClick} />
+              </motion.div>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-12 text-center"
+          >
             <p className="mb-4 text-gray-400">Want to see more of my work?</p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
               <Link
@@ -51,7 +72,7 @@ export default function ProjectsSection() {
                 Let's Connect
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
