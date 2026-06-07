@@ -4,8 +4,8 @@
 const bullets = [
   'Migrating Medscape legacy WebViews into native Jetpack Compose on MVI',
   'Shipping Knock and Nag — my own KMP / Compose Multiplatform side apps',
+  'Maintaining open-source TypeScript GitHub Actions and Python data tooling on the side',
   'Open to senior mobile engineering conversations',
-  'Rebuilding this site to actually look like me',
   'Back in the gym after a stretch off'
 ];
 

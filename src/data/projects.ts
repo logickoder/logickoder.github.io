@@ -105,15 +105,34 @@ const projects: Project[] = [
     year: 2024
   },
   {
+    title: 'Redactly',
+    description:
+      'Privacy-first PWA for anonymizing WhatsApp chat exports before sharing with AI models. Auto-detects participants, per-category PII masking (emails / URLs / phone), and a tiered leetspeak-aware NSFW filter. 100% client-side with Web Worker off-thread parsing.',
+    technologies: ['React 19', 'TypeScript', 'Vite', 'IndexedDB', 'PWA'],
+    category: 'Web',
+    githubUrl: 'https://github.com/logickoder/redactly',
+    featured: true,
+    year: 2026
+  },
+  {
     title: 'Firebase App Distribution Action',
     description:
       'Open-source GitHub Action wrapping Firebase App Distribution for drop-in CI delivery. Used as internal-build delivery pipeline across multiple engagements.',
-    technologies: ['TypeScript', 'GitHub Actions', 'Firebase'],
+    technologies: ['TypeScript', 'GitHub Actions', 'Firebase', 'Node.js'],
     category: 'Full-Stack',
     githubUrl: 'https://github.com/logickoder/firebase-distribution',
-    featured: false,
+    featured: true,
     year: 2025,
     caseStudySlug: 'firebase-distribution-action'
+  },
+  {
+    title: 'Sub-Millisecond Lambda Sniper (private)',
+    description:
+      'Stateless Node.js micro-VM on AWS Lambda hitting sub-millisecond firing precision. Built on `hrtime` spin-locks, NoDelay/TCP_NODELAY pinned `https.Agent` pool, HTTP/2 multiplexed burst with cork+uncork, NTP-style clock-skew compensation, dynamic per-IP calibration, seeded PRNG scheduling, and air-gapped Telegram telemetry. Techniques abstracted — repo private, no target attribution.',
+    technologies: ['TypeScript', 'Node.js', 'AWS Lambda', 'HTTP/2'],
+    category: 'Full-Stack',
+    featured: false,
+    year: 2026
   },
   {
     title: 'Pay with Mona SDK',

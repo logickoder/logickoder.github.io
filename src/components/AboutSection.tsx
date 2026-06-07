@@ -15,9 +15,12 @@ export default function AboutSection() {
           <p className="text-base font-normal leading-relaxed text-gray-300 sm:text-lg sm:leading-loose">
             I ship infrastructure people don&apos;t notice until it breaks — caching layers,
             build-distribution actions, custom Android launchers, low-latency event pipelines.
-            Mobile native (Kotlin / Jetpack Compose) is the home base; Kotlin Multiplatform,
-            Compose Multiplatform, Flutter, React Native, React, Node, and AWS Lambda come along
-            when the job needs them.
+            Mobile native (Kotlin / Jetpack Compose) is the home base. Day-to-day I also ship in{' '}
+            <strong className="text-white">TypeScript</strong> and{' '}
+            <strong className="text-white">Python</strong> — open-source GitHub Actions, low-latency
+            Node / AWS Lambda services, React / Next.js dashboards, data tooling. Kotlin
+            Multiplatform, Compose Multiplatform, Flutter, and React Native come along when the
+            job needs them.
           </p>
           <p className="text-base font-normal leading-relaxed text-gray-300 sm:text-lg sm:leading-loose">
             Currently working with the WebMD / Medscape team — migrating legacy WebViews into

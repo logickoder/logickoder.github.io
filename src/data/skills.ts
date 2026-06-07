@@ -20,24 +20,24 @@ const skills = [
     ]
   },
   {
+    icon: ApiIcon,
+    title: 'Frontend',
+    skills: ['React', 'Next.js', 'Vite', 'Tailwind CSS']
+  },
+  {
+    icon: DevOpsIcon,
+    title: 'Backend & Cloud',
+    skills: ['Node.js (Express)', 'AWS Lambda', 'MongoDB', 'PostgreSQL', 'Firebase']
+  },
+  {
     icon: CodeIcon,
     title: 'Languages',
     skills: ['Kotlin', 'Java', 'Dart', 'JavaScript', 'TypeScript', 'Python']
   },
   {
     icon: ApiIcon,
-    title: 'Frontend',
-    skills: ['React', 'Next.js', 'Vite', 'Tailwind CSS']
-  },
-  {
-    icon: ApiIcon,
     title: 'Networking / SDK',
     skills: ['OkHttp', 'Retrofit', 'Ktor', 'Reflection-based runtime traversal']
-  },
-  {
-    icon: DevOpsIcon,
-    title: 'Backend & Cloud',
-    skills: ['Node.js (Express)', 'AWS Lambda', 'MongoDB', 'PostgreSQL', 'Firebase']
   },
   {
     icon: ArchitectureIcon,

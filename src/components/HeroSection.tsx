@@ -38,7 +38,7 @@ export default function HeroSection() {
             className="animate-hero-rise text-primary mt-4 font-mono text-xs uppercase leading-relaxed tracking-[0.18em] sm:mt-5 sm:text-sm"
             style={{ animationDelay: '0.3s' }}
           >
-            Senior Mobile Engineer — Android · KMM · Flutter · React
+            Senior Mobile Engineer — Android · KMM · Flutter · React · Node · Python
           </p>
 
           <p
