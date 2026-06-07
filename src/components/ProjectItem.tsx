@@ -32,13 +32,10 @@ export default function ProjectItem(props: ProjectItemProps) {
   }, [onProjectClick, project]);
 
   return (
-    <div
-      className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-gray-700/50 bg-gradient-to-br from-gray-800/90 to-gray-900/90 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary-500/50 hover:shadow-xl hover:shadow-primary-500/10 cursor-pointer"
+    <article
+      className="group hover:border-primary/60 flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-gray-800 bg-[#161a1e] transition-colors duration-200"
       onClick={handleCardClick}
     >
-      {/* Subtle glow effect on hover */}
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary-500/0 via-primary-400/0 to-primary-500/0 opacity-0 transition-opacity duration-300 group-hover:from-primary-500/5 group-hover:via-primary-400/10 group-hover:to-primary-500/5 group-hover:opacity-100"></div>
-
       <div className="relative aspect-video w-full flex-shrink-0 overflow-hidden">
         <ProjectImage
           image={props.image}
@@ -47,7 +44,7 @@ export default function ProjectItem(props: ProjectItemProps) {
           className="aspect-video"
         />
 
-        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/60 via-black/20 to-black/20 opacity-0 transition-all duration-500 group-hover:from-black/70 group-hover:via-black/40 group-hover:to-black/30 group-hover:opacity-100">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
           <ProjectActionButtons
             githubUrl={props.githubUrl}
             liveUrl={props.liveUrl}
@@ -58,38 +55,37 @@ export default function ProjectItem(props: ProjectItemProps) {
         </div>
       </div>
 
-      <div className="relative flex flex-1 flex-col p-6">
-        <div className="mb-3 flex items-start justify-between">
-          <h3 className="text-lg font-bold leading-tight text-white transition-colors duration-200 group-hover:text-primary-300">
+      <div className="flex flex-1 flex-col p-6">
+        <div className="mb-3 flex items-start justify-between gap-3">
+          <h3 className="font-serif text-xl font-bold leading-tight text-white">
             {props.title}
           </h3>
-          <span className="rounded-full border border-primary-500/30 bg-gradient-to-r from-primary-500/10 to-primary-400/10 px-3 py-1 text-xs font-medium text-primary-400 backdrop-blur-sm">
+          <span className="border-primary/30 bg-primary/10 text-primary flex-shrink-0 rounded-full border px-2.5 py-0.5 font-mono text-[0.65rem] uppercase tracking-wider">
             {props.category}
           </span>
         </div>
 
-        <p className="mb-4 flex-1 text-sm leading-relaxed text-gray-300 transition-colors duration-200 group-hover:text-gray-200">
+        <p className="mb-4 flex-1 text-sm leading-relaxed text-gray-300 sm:text-base">
           {props.description}
         </p>
 
         {props.technologies && props.technologies.length > 0 && (
           <div className="mb-4">
-            <ProjectTechnologies
-              technologies={props.technologies}
-              maxVisible={4}
-              size="sm"
-            />
+            <ProjectTechnologies technologies={props.technologies} maxVisible={4} size="sm" />
           </div>
         )}
 
         {props.year && (
-          <div className="mt-auto flex items-center justify-between">
-            <div className="text-xs font-medium text-gray-500">{props.year}</div>
-            <div className="mx-3 h-px flex-1 bg-gradient-to-r from-transparent via-gray-700/50 to-transparent"></div>
-            <div className="text-xs text-gray-600">Project</div>
+          <div className="mt-auto flex items-center justify-between border-t border-gray-800 pt-3">
+            <span className="font-mono text-xs tracking-wider text-gray-500">{props.year}</span>
+            {props.caseStudySlug ? (
+              <span className="text-primary font-mono text-[0.65rem] uppercase tracking-wider">
+                Case study →
+              </span>
+            ) : null}
           </div>
         )}
       </div>
-    </div>
+    </article>
   );
 }

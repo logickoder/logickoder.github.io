@@ -5,13 +5,24 @@ export default function useSmoothScroll() {
   const { trackNavigation } = useAnalytics();
 
   const scroll = (href: string, e: MouseEvent<HTMLElement>) => {
-    e.preventDefault();
+    // Only intercept in-page anchors; let router-managed paths navigate normally.
+    if (!href.startsWith('#')) {
+      return;
+    }
 
     const targetId = href.replace('#', '');
+    const target = document.getElementById(targetId);
 
+    if (!target) {
+      // Element absent on the current route — fall through to default behavior so
+      // routed `/#section` navigation works after Link transitions to homepage.
+      return;
+    }
+
+    e.preventDefault();
     trackNavigation(targetId);
 
-    document.getElementById(targetId)?.scrollIntoView({
+    target.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
@@ -19,3 +30,4 @@ export default function useSmoothScroll() {
 
   return { scroll };
 }
+

@@ -8,6 +8,8 @@ export interface Project {
   liveUrl?: string;
   featured?: boolean;
   year?: number;
+  // When set, a deep-dive case study lives at /projects/<caseStudySlug>.
+  caseStudySlug?: string;
 }
 
 const projects: Project[] = [
@@ -20,7 +22,8 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/logickoder/retrostash',
     liveUrl: 'https://logickoder.dev/retrostash',
     featured: true,
-    year: 2026
+    year: 2026,
+    caseStudySlug: 'retrostash'
   },
   {
     title: 'Knock',
@@ -29,7 +32,8 @@ const projects: Project[] = [
     technologies: ['Kotlin Multiplatform', 'Compose Multiplatform', 'Room (KMP)', 'Ktor'],
     category: 'Mobile',
     featured: true,
-    year: 2026
+    year: 2026,
+    caseStudySlug: 'knock'
   },
   {
     title: 'Nag',
@@ -38,7 +42,8 @@ const projects: Project[] = [
     technologies: ['Kotlin Multiplatform', 'Compose Multiplatform', 'AlarmManager'],
     category: 'Mobile',
     featured: true,
-    year: 2026
+    year: 2026,
+    caseStudySlug: 'nag'
   },
   {
     title: 'AppStorys SDK',
@@ -49,7 +54,8 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/appversal/AppStorys-Android-SDK',
     liveUrl: 'https://appstorys.com/',
     featured: true,
-    year: 2025
+    year: 2025,
+    caseStudySlug: 'appstorys-sdk'
   },
   {
     title: 'Keyguarde',
@@ -106,7 +112,8 @@ const projects: Project[] = [
     category: 'Full-Stack',
     githubUrl: 'https://github.com/logickoder/firebase-distribution',
     featured: false,
-    year: 2025
+    year: 2025,
+    caseStudySlug: 'firebase-distribution-action'
   },
   {
     title: 'Pay with Mona SDK',

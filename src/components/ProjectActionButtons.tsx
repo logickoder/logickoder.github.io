@@ -18,20 +18,20 @@ export default function ProjectActionButtons({
   size = 'sm'
 }: ProjectActionButtonsProps) {
   const isOverlay = variant === 'overlay';
-  const sizeClasses = size === 'sm' ? 'px-4 py-2 text-sm' : 'px-6 py-3 text-base';
+  const sizeClasses = size === 'sm' ? 'px-4 py-2 text-sm' : 'px-5 py-2.5 text-base';
 
-  const baseButtonClasses = `font-medium transition-all duration-200 rounded-lg ${sizeClasses}`;
+  const buttonBase = `inline-flex items-center justify-center gap-2 rounded-lg font-mono uppercase tracking-wider transition-colors duration-200 ${sizeClasses}`;
 
   const githubClasses = isOverlay
-    ? `${baseButtonClasses} border border-white/80 bg-black/30 text-white backdrop-blur-md hover:border-white hover:bg-white/20 hover:shadow-lg`
-    : `${baseButtonClasses} flex items-center justify-center border border-white/20 bg-black/20 text-white backdrop-blur-md hover:border-white/40 hover:bg-white/10 hover:shadow-lg`;
+    ? `${buttonBase} border border-white/70 bg-black/40 text-white backdrop-blur-md hover:border-white hover:bg-white/10`
+    : `${buttonBase} border-primary text-primary hover:bg-primary hover:text-white border`;
 
   const liveClasses = isOverlay
-    ? `${baseButtonClasses} bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg backdrop-blur-md hover:from-primary-500 hover:to-primary-400 hover:shadow-xl hover:shadow-primary-500/25`
-    : `${baseButtonClasses} flex items-center justify-center bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg hover:from-primary-500 hover:to-primary-400 hover:shadow-xl hover:shadow-primary-500/25`;
+    ? `${buttonBase} bg-primary text-white hover:bg-primary-600`
+    : `${buttonBase} bg-primary text-white hover:bg-primary-600`;
 
   const containerClasses = isOverlay
-    ? 'flex translate-y-4 transform gap-3 transition-transform duration-300 group-hover:translate-y-0'
+    ? 'flex translate-y-2 transform gap-3 transition-transform duration-200 group-hover:translate-y-0'
     : 'flex flex-col gap-3 sm:flex-row';
 
   return (
@@ -44,7 +44,7 @@ export default function ProjectActionButtons({
           rel="noopener noreferrer"
           onClick={(e) => onLinkClick(e, 'code')}
         >
-          {!isOverlay && <GitHubIcon className="mr-2" />}
+          {!isOverlay && <GitHubIcon />}
           View Code
         </Link>
       )}
@@ -56,7 +56,7 @@ export default function ProjectActionButtons({
           rel="noopener noreferrer"
           onClick={(e) => onLinkClick(e, 'demo')}
         >
-          {!isOverlay && <OpenLinkIcon className="mr-2" />}
+          {!isOverlay && <OpenLinkIcon />}
           Live Demo
         </Link>
       )}

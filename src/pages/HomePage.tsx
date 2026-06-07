@@ -30,7 +30,7 @@ export default function HomePage() {
         <meta property="og:description" content={HOME_DESCRIPTION} />
         <meta name="twitter:title" content="Jeffery Orazulike — Senior Mobile Engineer" />
         <meta name="twitter:description" content={HOME_DESCRIPTION} />
-        <link rel="canonical" href="https://logickoder.dev/" />
+        <link rel="canonical" href="https://logickoder.dev/#/" />
       </Helmet>
       <Header />
       <main className="relative z-10 flex-1">

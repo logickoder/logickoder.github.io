@@ -13,24 +13,26 @@ export default function SkillsSection() {
             return (
               <div
                 key={index}
-                className="hover:border-primary group flex flex-col rounded-xl border border-[#3b4754] bg-[#1b2127] p-6 transition-colors duration-200"
+                className="hover:border-primary/60 group flex flex-col rounded-xl border border-gray-800 bg-[#161a1e] p-6 transition-colors duration-200"
               >
-                <div className="mb-4 flex items-center gap-4">
-                  <div className="text-primary group-hover:bg-primary rounded-full bg-[#283039] p-3 transition-colors group-hover:text-white">
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="text-primary border-primary/30 bg-primary/10 group-hover:bg-primary group-hover:text-white inline-flex items-center justify-center rounded-lg border p-2.5 transition-colors">
                     <IconComponent />
                   </div>
-                  <h3 className="text-lg font-bold leading-tight text-white">{category.title}</h3>
+                  <h3 className="font-serif text-lg font-bold leading-tight text-white">
+                    {category.title}
+                  </h3>
                 </div>
-                <ul className="space-y-2">
+                <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
-                    <li
+                    <span
                       key={skillIndex}
-                      className="font-mono text-xs text-gray-300 transition-colors group-hover:text-gray-200 sm:text-sm"
+                      className="border-primary/30 bg-primary/10 text-primary rounded-full border px-2.5 py-0.5 font-mono text-xs"
                     >
                       {skill}
-                    </li>
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
             );
           })}

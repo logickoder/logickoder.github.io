@@ -15,8 +15,8 @@ export default function ProjectTechnologies({
   const remainingCount = technologies.length - maxVisible;
 
   const sizeClasses = {
-    sm: 'text-xs px-2.5 py-1',
-    md: 'text-sm px-3 py-2'
+    sm: 'text-xs px-2.5 py-0.5',
+    md: 'text-sm px-3 py-1'
   };
 
   return (
@@ -24,13 +24,15 @@ export default function ProjectTechnologies({
       {displayTechnologies.map((tech, index) => (
         <span
           key={index}
-          className={`rounded-md border border-gray-600/40 bg-gray-700/60 font-medium text-gray-300 transition-all duration-200 hover:border-primary-500/40 hover:bg-primary-500/10 hover:text-primary-300 ${sizeClasses[size]}`}
+          className={`border-primary/30 bg-primary/10 text-primary rounded-full border font-mono ${sizeClasses[size]}`}
         >
           {tech}
         </span>
       ))}
       {!showAll && remainingCount > 0 && (
-        <span className={`rounded-md border border-gray-600/40 bg-gray-700/60 font-medium text-gray-400 transition-all duration-200 hover:text-gray-300 ${sizeClasses[size]}`}>
+        <span
+          className={`rounded-full border border-gray-700 bg-gray-900 font-mono text-gray-400 ${sizeClasses[size]}`}
+        >
           +{remainingCount} more
         </span>
       )}

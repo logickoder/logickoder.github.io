@@ -3,7 +3,7 @@ import { BlogPost, fetchBlogPosts } from '../services/mediumService';
 import useAnalytics from '../hooks/useAnalytics';
 import { Link } from 'react-router-dom';
 
-const SUBSTACK_PROFILE_URL = 'https://logickoder.substack.com';
+const HOMEPAGE_PREVIEW_COUNT = 3;
 
 export default function BlogSection() {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
@@ -16,7 +16,7 @@ export default function BlogSection() {
       try {
         setLoading(true);
         const posts = await fetchBlogPosts();
-        setBlogPosts(posts);
+        setBlogPosts(posts.slice(0, HOMEPAGE_PREVIEW_COUNT));
         setError(null);
       } catch (err) {
         setError('Failed to load blog posts');
@@ -34,8 +34,8 @@ export default function BlogSection() {
     trackExternalLink(`${post.source}_post`, post.href);
   };
 
-  const handleViewAllPostsClick = () => {
-    trackExternalLink('substack_profile', SUBSTACK_PROFILE_URL);
+  const handleViewAllWritingClick = () => {
+    trackExternalLink('writing_page', '/writing');
   };
 
   if (loading) {
@@ -100,15 +100,12 @@ export default function BlogSection() {
         )}
         {blogPosts.length > 0 && (
           <div className="mt-12 text-center">
-            <p className="mb-4 text-gray-400">Want to read more of my articles?</p>
             <Link
-              to={SUBSTACK_PROFILE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              to="/writing"
               className="bg-primary hover:bg-primary-600 inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-white transition-colors"
-              onClick={handleViewAllPostsClick}
+              onClick={handleViewAllWritingClick}
             >
-              Read on Substack
+              View all writing
             </Link>
           </div>
         )}

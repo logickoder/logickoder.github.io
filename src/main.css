@@ -1,12 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900');
+@import url('https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900');
 
 @import 'tailwindcss';
 
-@config '../tailwind.config.ts';
+@theme {
+  /* Type ramp */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Fraunces', ui-serif, Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --text-xxs: 0.625rem;
+
+  /* Breakpoint extension */
+  --breakpoint-3xl: 1920px;
+
+  /* Burnt-orange accent — anchored on Chocolate #D2691E.
+     Distinct from Tailwind-default blue dev portfolios. */
+  --color-primary-50: #fdf6f0;
+  --color-primary-100: #fbead7;
+  --color-primary-200: #f7d0ac;
+  --color-primary-300: #f0ae6f;
+  --color-primary-400: #e68d40;
+  --color-primary-500: #d2691e;
+  --color-primary-600: #b5571a;
+  --color-primary-700: #8c4015;
+  --color-primary-800: #663012;
+  --color-primary-900: #422010;
+  --color-primary-950: #2a1408;
+
+  /* `primary` alone resolves to the 500 step so `bg-primary` works as expected. */
+  --color-primary: var(--color-primary-500);
+
+  /* Surface accent matching the body bg + a dark `gray` override scale to keep
+     existing utility classes (e.g. `bg-gray-900`) on-palette. */
+  --color-chinese-black: #111418;
+
+  --color-gray-50: #fafbfc;
+  --color-gray-100: #f7fafc;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e0;
+  --color-gray-400: #a0aec0;
+  --color-gray-500: #718096;
+  --color-gray-600: #4a5568;
+  --color-gray-700: #2d3748;
+  --color-gray-800: #1a1f26;
+  --color-gray-900: #111418;
+  --color-gray-950: #0a0c0f;
+
+  /* Signature animations — kept minimal: hero entrance + mobile menu drawer. */
+  --animate-fade-in: fadeIn 0.5s ease-in-out;
+  --animate-hero-rise: heroRise 0.8s ease-out both;
+
+  --backdrop-blur-xs: 2px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes heroRise {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 body {
-  font-family: Inter, 'Noto Sans', sans-serif;
-  background-color: #111418;
+  font-family: var(--font-sans);
+  background-color: var(--color-chinese-black);
   color: #fff;
 }
 
