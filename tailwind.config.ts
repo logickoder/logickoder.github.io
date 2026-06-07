@@ -5,25 +5,29 @@ export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      sans: ['"Inter"', ...defaultTheme.fontFamily.sans]
+      sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
+      serif: ['"Fraunces"', ...defaultTheme.fontFamily.serif],
+      mono: ['"JetBrains Mono"', ...defaultTheme.fontFamily.mono]
     },
     extend: {
       screens: {
         '3xl': '1920px'
       },
       colors: {
+        // Burnt-orange accent — anchored on Chocolate #D2691E
+        // Distinct from Tailwind-default blue dev portfolios.
         primary: {
-          50: '#eff8ff',
-          100: '#dbeefe',
-          200: '#bfe2fe',
-          300: '#93d0fd',
-          400: '#60b4fa',
-          500: '#3b96f6',
-          600: '#0c7ff2',
-          700: '#0369dd',
-          800: '#0754b3',
-          900: '#0c4a8c',
-          950: '#082f57'
+          50: '#FDF6F0',
+          100: '#FBEAD7',
+          200: '#F7D0AC',
+          300: '#F0AE6F',
+          400: '#E68D40',
+          500: '#D2691E',
+          600: '#B5571A',
+          700: '#8C4015',
+          800: '#663012',
+          900: '#422010',
+          950: '#2A1408'
         },
         'chinese-black': '#111418',
         gray: {
@@ -58,8 +62,8 @@ export default {
           '100%': { opacity: '1', transform: 'translateY(0)' }
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(12, 127, 242, 0.3)' },
-          '100%': { boxShadow: '0 0 30px rgba(12, 127, 242, 0.6)' }
+          '0%': { boxShadow: '0 0 20px rgba(210, 105, 30, 0.3)' },
+          '100%': { boxShadow: '0 0 30px rgba(210, 105, 30, 0.6)' }
         }
       },
       backdropBlur: {

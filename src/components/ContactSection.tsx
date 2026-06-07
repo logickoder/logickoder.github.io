@@ -1,7 +1,6 @@
 import useAnalytics from '../hooks/useAnalytics';
 import socialLinks from '../data/socialLinks.ts';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
 export default function ContactSection() {
   const { trackFormSubmission, trackExternalLink } = useAnalytics();
@@ -20,20 +19,10 @@ export default function ContactSection() {
       id="contact"
     >
       <div className="container mx-auto max-w-screen-md">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-8 text-center text-3xl font-bold leading-tight tracking-tight sm:mb-12 sm:text-4xl"
-        >
+        <h2 className="mb-8 text-center font-serif text-3xl font-bold leading-tight tracking-tight sm:mb-12 sm:text-4xl">
           Get In Touch
-        </motion.h2>
-        <motion.form
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+        </h2>
+        <form
           className="space-y-6"
           action="https://formspree.io/f/xdobdybl"
           method="POST"
@@ -80,34 +69,22 @@ export default function ContactSection() {
           </div>
           <div className="text-right">
             <button
-              className="bg-primary focus:ring-primary/50 h-10 min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg px-6 text-sm font-bold leading-normal tracking-[0.015em] text-white transition-colors hover:bg-[#0a6cce] focus:ring-4 sm:h-12 sm:px-8 sm:text-base"
+              className="bg-primary focus:ring-primary/50 hover:bg-primary-600 h-10 min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg px-6 text-sm font-bold leading-normal tracking-[0.015em] text-white transition-colors focus:ring-4 sm:h-12 sm:px-8 sm:text-base"
               type="submit"
             >
               <span className="truncate">Send Message</span>
             </button>
           </div>
-        </motion.form>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 flex flex-col items-center gap-4 text-center sm:mt-16"
-        >
+        </form>
+        <div className="mt-12 flex flex-col items-center gap-4 text-center sm:mt-16">
           <p className="text-lg text-gray-300">Or reach out directly:</p>
           <div className="flex flex-col gap-2 sm:flex-row sm:gap-8">
             <a href="mailto:jeffery@logickoder.dev" className="text-primary hover:underline">
               jeffery@logickoder.dev
             </a>
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-8 flex justify-center gap-6 sm:gap-8"
-        >
+        </div>
+        <div className="mt-8 flex justify-center gap-6 sm:gap-8">
           {socialLinks.map((social) => {
             const IconComponent = social.icon;
             return (
@@ -124,7 +101,7 @@ export default function ContactSection() {
               </Link>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

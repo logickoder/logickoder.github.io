@@ -12,6 +12,46 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    title: 'Retrostash',
+    description:
+      "Annotation-driven KMP caching library for Retrofit, OkHttp, and Ktor. Solves POST-query caching (GraphQL, search) and mutation-driven cache invalidation that stock OkHttp can't. Published to Maven Central and Swift Package Manager. Targets Android, JVM, iOS, and wasmJs.",
+    technologies: ['Kotlin Multiplatform', 'Ktor', 'OkHttp', 'Retrofit'],
+    category: 'Mobile',
+    githubUrl: 'https://github.com/logickoder/retrostash',
+    liveUrl: 'https://logickoder.dev/retrostash',
+    featured: true,
+    year: 2026
+  },
+  {
+    title: 'Knock',
+    description:
+      'Local-first calendar alarm app on Compose Multiplatform (KMP). Turns calendar events into full-screen, lock-screen-bypassing alarms that ring until dismissed. Multi-source ingest (Android calendar provider, Google OAuth, ICS subscriptions, manual entry). Architectural mandate: never weaken alarm reliability.',
+    technologies: ['Kotlin Multiplatform', 'Compose Multiplatform', 'Room (KMP)', 'Ktor'],
+    category: 'Mobile',
+    featured: true,
+    year: 2026
+  },
+  {
+    title: 'Nag',
+    description:
+      'High-friction persistent-reminder utility on Kotlin Multiplatform (Android-first). Active-Until-Done state with an escalation ladder — full-screen intent, louder vibration, screen-on strobe, continuous alarm. Only an explicit "I Did It" tap stops the loop. Quick Settings tile + app shortcuts for sub-second entry.',
+    technologies: ['Kotlin Multiplatform', 'Compose Multiplatform', 'AlarmManager'],
+    category: 'Mobile',
+    featured: true,
+    year: 2026
+  },
+  {
+    title: 'AppStorys SDK',
+    description:
+      'Unified UI analytics SDK leveraging reflection and internal API bridging to traverse both traditional XML View hierarchies and modern Compose SemanticsNode trees at runtime for deep metadata capture.',
+    technologies: ['Android', 'Flutter', 'React Native', 'Reflection'],
+    category: 'Mobile',
+    githubUrl: 'https://github.com/appversal/AppStorys-Android-SDK',
+    liveUrl: 'https://appstorys.com/',
+    featured: true,
+    year: 2025
+  },
+  {
     title: 'Keyguarde',
     description:
       'An Android app to monitor notifications for user-defined keywords, alerting users of relevant messages.',
@@ -38,15 +78,6 @@ const projects: Project[] = [
     year: 2024
   },
   {
-    title: 'Transact',
-    description:
-      'A multi-tenant kiosk cross-platform application designed for customer transaction management and visit tracking.',
-    technologies: ['Kotlin Multiplatform', 'Jetpack Compose'],
-    category: 'Mobile',
-    featured: true,
-    year: 2024
-  },
-  {
     title: 'FuelCheck',
     description:
       'Real-time fuel tracking app displaying prices, availability, and queue lengths in Abuja.',
@@ -59,12 +90,23 @@ const projects: Project[] = [
     year: 2024
   },
   {
-    title: 'Farmex & YieldMax',
-    description: 'Apps for farm inventory and yield management, built in React Native and Java.',
-    technologies: ['React Native', 'Java', 'Android'],
+    title: 'Transact',
+    description:
+      'A multi-tenant kiosk cross-platform application designed for customer transaction management and visit tracking.',
+    technologies: ['Kotlin Multiplatform', 'Jetpack Compose'],
     category: 'Mobile',
+    featured: true,
+    year: 2024
+  },
+  {
+    title: 'Firebase App Distribution Action',
+    description:
+      'Open-source GitHub Action wrapping Firebase App Distribution for drop-in CI delivery. Used as internal-build delivery pipeline across multiple engagements.',
+    technologies: ['TypeScript', 'GitHub Actions', 'Firebase'],
+    category: 'Full-Stack',
+    githubUrl: 'https://github.com/logickoder/firebase-distribution',
     featured: false,
-    year: 2023
+    year: 2025
   },
   {
     title: 'Pay with Mona SDK',
@@ -76,14 +118,12 @@ const projects: Project[] = [
     year: 2025
   },
   {
-    title: 'AppStorys SDK',
-    description: 'Analytics SDK capturing view tree metadata for mobile apps.',
-    technologies: ['Android', 'Flutter', 'React Native'],
+    title: 'Farmex & YieldMax',
+    description: 'Apps for farm inventory and yield management, built in React Native and Java.',
+    technologies: ['React Native', 'Java', 'Android'],
     category: 'Mobile',
-    githubUrl: 'https://github.com/appversal/AppStorys-Android-SDK',
-    liveUrl: 'https://appstorys.com/',
     featured: false,
-    year: 2025
+    year: 2023
   },
   {
     title: 'iKooK',
@@ -100,7 +140,7 @@ const projects: Project[] = [
   {
     title: 'Zenky Launcher – Internal Use Only',
     description:
-      'A high-performance Android launcher developed for BytebyBit’s internal productivity tools. Features included advanced gesture controls, app drawer customization, and deep OS integration.',
+      "A high-performance Android launcher developed for BytebyBit's internal productivity tools. Features included advanced gesture controls, app drawer customization, and deep OS integration.",
     technologies: ['Android', 'Jetpack Compose'],
     category: 'Mobile',
     featured: false,
@@ -109,4 +149,3 @@ const projects: Project[] = [
 ];
 
 export default projects;
-
