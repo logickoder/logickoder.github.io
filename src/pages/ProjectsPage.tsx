@@ -14,7 +14,7 @@ type Filter = 'All' | Category;
 const FILTERS: Filter[] = ['All', 'Mobile', 'Web', 'Full-Stack'];
 
 const PROJECTS_DESCRIPTION =
-  'A comprehensive collection of mobile, web, and full-stack projects by Jeffery Orazulike — from Android apps to Kotlin Multiplatform libraries and React dashboards.';
+  'A comprehensive collection of mobile, web, and full-stack projects by Jeffery Orazulike: Android apps, Kotlin Multiplatform libraries, and React dashboards.';
 
 export default function ProjectsPage() {
   const { handleProjectClick, handleContactClick, isModalOpen, handleCloseModal, selectedProject } =
@@ -56,11 +56,11 @@ export default function ProjectsPage() {
   return (
     <>
       <Helmet>
-        <title>All Projects — Jeffery Orazulike</title>
+        <title>All Projects · Jeffery Orazulike</title>
         <meta name="description" content={PROJECTS_DESCRIPTION} />
-        <meta property="og:title" content="All Projects — Jeffery Orazulike" />
+        <meta property="og:title" content="All Projects · Jeffery Orazulike" />
         <meta property="og:description" content={PROJECTS_DESCRIPTION} />
-        <meta name="twitter:title" content="All Projects — Jeffery Orazulike" />
+        <meta name="twitter:title" content="All Projects · Jeffery Orazulike" />
         <meta name="twitter:description" content={PROJECTS_DESCRIPTION} />
         <link rel="canonical" href="https://logickoder.dev/#/projects" />
       </Helmet>

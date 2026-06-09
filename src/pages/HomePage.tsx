@@ -24,11 +24,11 @@ export default function HomePage() {
   return (
     <div className="bg-chinese-black group/design-root dark relative flex size-full min-h-screen flex-col overflow-x-hidden">
       <Helmet>
-        <title>Jeffery Orazulike — Senior Mobile Engineer</title>
+        <title>Jeffery Orazulike · Senior Mobile Engineer</title>
         <meta name="description" content={HOME_DESCRIPTION} />
-        <meta property="og:title" content="Jeffery Orazulike — Senior Mobile Engineer" />
+        <meta property="og:title" content="Jeffery Orazulike · Senior Mobile Engineer" />
         <meta property="og:description" content={HOME_DESCRIPTION} />
-        <meta name="twitter:title" content="Jeffery Orazulike — Senior Mobile Engineer" />
+        <meta name="twitter:title" content="Jeffery Orazulike · Senior Mobile Engineer" />
         <meta name="twitter:description" content={HOME_DESCRIPTION} />
         <link rel="canonical" href="https://logickoder.dev/#/" />
       </Helmet>

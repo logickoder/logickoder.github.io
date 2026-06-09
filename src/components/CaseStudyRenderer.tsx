@@ -85,7 +85,7 @@ function Section({ section, index }: { section: CaseStudySection; index: number 
           </p>
           {section.attribution ? (
             <footer className="mt-3 font-mono text-xs tracking-wide text-gray-500">
-              — {section.attribution}
+              · {section.attribution}
             </footer>
           ) : null}
         </blockquote>

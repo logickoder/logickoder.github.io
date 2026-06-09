@@ -46,11 +46,11 @@ export default function WritingPage() {
   return (
     <>
       <Helmet>
-        <title>Writing — Jeffery Orazulike</title>
+        <title>Writing · Jeffery Orazulike</title>
         <meta name="description" content={WRITING_DESCRIPTION} />
-        <meta property="og:title" content="Writing — Jeffery Orazulike" />
+        <meta property="og:title" content="Writing · Jeffery Orazulike" />
         <meta property="og:description" content={WRITING_DESCRIPTION} />
-        <meta name="twitter:title" content="Writing — Jeffery Orazulike" />
+        <meta name="twitter:title" content="Writing · Jeffery Orazulike" />
         <meta name="twitter:description" content={WRITING_DESCRIPTION} />
         <link rel="canonical" href="https://logickoder.dev/#/writing" />
       </Helmet>

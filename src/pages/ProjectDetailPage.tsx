@@ -49,7 +49,7 @@ export default function ProjectDetailPage() {
 
   const description =
     study.summary.length > 160 ? study.summary.slice(0, 157) + '…' : study.summary;
-  const title = `${study.title} — Case Study | Jeffery Orazulike`;
+  const title = `${study.title} · Case Study | Jeffery Orazulike`;
 
   return (
     <>

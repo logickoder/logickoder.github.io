@@ -38,7 +38,7 @@ export default function HeroSection() {
             className="animate-hero-rise text-primary mt-4 font-mono text-xs uppercase leading-relaxed tracking-[0.18em] sm:mt-5 sm:text-sm"
             style={{ animationDelay: '0.3s' }}
           >
-            Senior Mobile Engineer — Android · KMM · Flutter · React · Node · Python
+            Senior Mobile Engineer · Android · KMM · Flutter · React · Node · Python
           </p>
 
           <p
@@ -47,7 +47,7 @@ export default function HeroSection() {
           >
             I ship infrastructure. Retrostash (KMP caching library on Maven Central), custom
             Android launchers, low-latency Lambdas, KMP and Compose Multiplatform shipped at scale.
-            Currently working with the WebMD / Medscape team — migrating legacy WebViews into
+            Currently working with the WebMD / Medscape team. Migrating legacy WebViews into
             native Jetpack Compose. 6 years in.
           </p>
 

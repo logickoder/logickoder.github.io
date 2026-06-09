@@ -17,28 +17,28 @@ const knock: CaseStudy = {
     'AppAuth'
   ],
   summary:
-    "A local-first Android app that wakes you for calendar meetings the way an alarm clock wakes you in the morning — full-screen, lock-screen-bypassing, ringing until you dismiss it. Built on Compose Multiplatform with iOS targets compiled from day one. Architectural mandate: never weaken alarm reliability.",
+    "A local-first Android app that wakes you for calendar meetings the way an alarm clock wakes you in the morning: full-screen, lock-screen-bypassing, ringing until you dismiss it. Built on Compose Multiplatform with iOS targets compiled from day one. Architectural mandate: never weaken alarm reliability.",
   sections: [
     { type: 'heading', level: 2, text: 'Problem' },
     {
       type: 'prose',
       content:
-        "Calendar notifications fail too often — silent on Do Not Disturb, swallowed by Doze, killed by aggressive OEM battery managers, or buried in a notification shade you didn't check. For a remote engineer whose income depends on being on time to a 14:00 meeting learned about at 13:42, 'I didn't see the notification' is not an acceptable outcome."
+        "Calendar notifications fail too often: silent on Do Not Disturb, swallowed by Doze, killed by aggressive OEM battery managers, or buried in a notification shade you didn't check. For a remote engineer whose income depends on being on time to a 14:00 meeting learned about at 13:42, 'I didn't see the notification' is not an acceptable outcome."
     },
     { type: 'heading', level: 2, text: 'Approach' },
     {
       type: 'prose',
       content:
-        "Multi-source event ingest into a single local database. Schedule exact alarms with the OS-level alarm primitives — the same ones that make your morning alarm reliable. No backend. Crashlytics for stack traces only, with PII scrubbing on calendar content."
+        "Multi-source event ingest into a single local database. Schedule exact alarms with the OS-level alarm primitives: the same ones that make your morning alarm reliable. No backend. Crashlytics for stack traces only, with PII scrubbing on calendar content."
     },
     { type: 'heading', level: 2, text: 'Sources' },
     {
       type: 'list',
       items: [
-        "Android's `CalendarContract` provider — zero config if calendars are already synced on the phone",
-        'Google Calendar OAuth via AppAuth — for work calendars not exposed to the device',
-        'ICS subscription URLs — fallback when OAuth is blocked by org policy',
-        'Manual entry — guaranteed-to-work path for any meeting'
+        "Android's `CalendarContract` provider: zero config if calendars are already synced on the phone",
+        'Google Calendar OAuth via AppAuth: for work calendars not exposed to the device',
+        'ICS subscription URLs: fallback when OAuth is blocked by org policy',
+        'Manual entry: guaranteed-to-work path for any meeting'
       ]
     },
     {
@@ -51,7 +51,7 @@ const knock: CaseStudy = {
     {
       type: 'prose',
       content:
-        '`setExactAndAllowWhileIdle`, boot-completed receivers, battery-optimization onboarding, full-screen-intent permission flow, foreground-service-only-when-needed. Any code change that risks alarm reliability — even theoretically — gets blocked.'
+        '`setExactAndAllowWhileIdle`, boot-completed receivers, battery-optimization onboarding, full-screen-intent permission flow, foreground-service-only-when-needed. Any code change that risks alarm reliability (even theoretically) gets blocked.'
     },
     { type: 'heading', level: 3, text: 'Never store calendar data outside the device' },
     {
@@ -63,7 +63,7 @@ const knock: CaseStudy = {
     {
       type: 'prose',
       content:
-        '`:composeApp:commonMain` already targets iOS. Platform actuals — AlarmManager, CalendarContract, AppAuth — are stubbed via `NotImplementedError("iOS implementation pending: <feature>")`. The iOS build never breaks; it just runs the stubs.'
+        '`:composeApp:commonMain` already targets iOS. Platform actuals (AlarmManager, CalendarContract, AppAuth) are stubbed via `NotImplementedError("iOS implementation pending: <feature>")`. The iOS build never breaks; it just runs the stubs.'
     },
     { type: 'heading', level: 2, text: 'Stack' },
     {

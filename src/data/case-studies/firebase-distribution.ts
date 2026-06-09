@@ -18,13 +18,13 @@ const firebaseDistribution: CaseStudy = {
     {
       type: 'prose',
       content:
-        "Every Android team I joined had a hand-rolled Firebase distribution step in their CI — wget the Firebase CLI, juggle service-account credentials, parse changelog from the commit, retry on flaky uploads. Each implementation slightly different. Each broken in slightly different ways. Each owned by no one."
+        "Every Android team I joined had a hand-rolled Firebase distribution step in their CI: wget the Firebase CLI, juggle service-account credentials, parse changelog from the commit, retry on flaky uploads. Each implementation slightly different. Each broken in slightly different ways. Each owned by no one."
     },
     { type: 'heading', level: 2, text: 'Approach' },
     {
       type: 'prose',
       content:
-        'Standard GitHub Action contract — pass the APK path, service-account JSON, app ID, tester groups. The Action does the CLI dance, surfaces clear errors, retries on transient network failures, supports optional release notes from a file or inline string.'
+        'Standard GitHub Action contract: pass the APK path, service-account JSON, app ID, tester groups. The Action does the CLI dance, surfaces clear errors, retries on transient network failures, supports optional release notes from a file or inline string.'
     },
     {
       type: 'code',
@@ -42,22 +42,27 @@ const firebaseDistribution: CaseStudy = {
     {
       type: 'prose',
       content:
-        'Composite Actions stitching shell commands work until they need to handle errors or branch on Firebase CLI output. TypeScript with `@actions/core` + `@actions/exec` is the lower-friction long-term choice — proper logging, masked secrets, clean retry logic.'
+        'Composite Actions stitching shell commands work until they need to handle errors or branch on Firebase CLI output. TypeScript with `@actions/core` + `@actions/exec` is the lower-friction long-term choice: proper logging, masked secrets, clean retry logic.'
     },
     { type: 'heading', level: 3, text: 'Service-account file, not API key' },
     {
       type: 'prose',
       content:
-        'Firebase App Distribution accepts both an API key flow and a service-account flow. Service-account is the only sane choice for CI — scoped permissions, revocable, auditable.'
+        'Firebase App Distribution accepts both an API key flow and a service-account flow. Service-account is the only sane choice for CI: scoped permissions, revocable, auditable.'
     },
     { type: 'heading', level: 2, text: 'Outcome' },
     {
       type: 'list',
       items: [
         'Replaced the hand-rolled Firebase distribution step at multiple engagements',
-        'Single source of truth for the upload flow — fix once, ship everywhere',
-        'No more "the CI broke and only Adam knows why" — the implementation is in one repo, owned'
+        'Single source of truth for the upload flow: fix once, ship everywhere',
+        'No more "the CI broke and only Adam knows why". The implementation is in one repo, owned.'
       ]
+    },
+    {
+      type: 'prose',
+      content:
+        'Tell me what breaks. Issues at [github.com/logickoder/firebase-distribution](https://github.com/logickoder/firebase-distribution), PRs welcome.'
     }
   ]
 };

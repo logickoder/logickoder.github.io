@@ -71,22 +71,22 @@ const retrostash: CaseStudy = {
     {
       type: 'prose',
       content:
-        "Retrostash intercepts the raw `RequestBody` (OkHttp) or `HttpRequestBuilder` attributes (Ktor) and resolves `{placeholders}` from `@Path`, `@Query`, `@Body`. It never assumes a serializer. Bodies can be plain Kotlin objects, `Map`s, arrays, JSON bytes — Retrostash extracts the fields it needs without owning the encoder."
+        "Retrostash intercepts the raw `RequestBody` (OkHttp) or `HttpRequestBuilder` attributes (Ktor) and resolves `{placeholders}` from `@Path`, `@Query`, `@Body`. It never assumes a serializer. Bodies can be plain Kotlin objects, `Map`s, arrays, JSON bytes. Retrostash extracts the fields it needs without owning the encoder."
     },
     { type: 'heading', level: 3, text: 'Tags for cross-API invalidation' },
     {
       type: 'prose',
       content:
-        "A single `@CacheMutate(invalidateTags = [\"orders\"])` clears every cached entry tagged `orders`, regardless of which endpoint produced it. This was the killer feature missing from competitors — mutations in one resource almost always invalidate caches in adjacent ones, and tag-based invalidation is the only sane way to express that without listing each cache key."
+        "A single `@CacheMutate(invalidateTags = [\"orders\"])` clears every cached entry tagged `orders`, regardless of which endpoint produced it. This was the killer feature missing from competitors: mutations in one resource almost always invalidate caches in adjacent ones, and tag-based invalidation is the only sane way to express that without listing each cache key."
     },
     { type: 'heading', level: 3, text: 'Modules' },
     {
       type: 'list',
       items: [
-        '`retrostash-core` — engine, key resolver, in-memory store (Android, JVM, iOS targets)',
-        '`retrostash-annotations` — `@CacheQuery`, `@CacheMutate`',
-        '`retrostash-ktor` — `HttpClient` plugin',
-        '`retrostash-okhttp` — `Interceptor` + Retrofit metadata extractor (Android + JVM)'
+        '`retrostash-core`: engine, key resolver, in-memory store (Android, JVM, iOS targets)',
+        '`retrostash-annotations`: `@CacheQuery`, `@CacheMutate`',
+        '`retrostash-ktor`: `HttpClient` plugin',
+        '`retrostash-okhttp`: `Interceptor` + Retrofit metadata extractor (Android + JVM)'
       ]
     },
     {
@@ -115,10 +115,15 @@ const retrostash: CaseStudy = {
     {
       type: 'list',
       items: [
-        'Persistent store backends — currently in-memory; SQLDelight or Room (KMP) for app restarts',
-        'Apollo GraphQL adapter — operation-level annotation surface',
-        'Cadence policies — per-entry TTL with background revalidation rather than only mutation-driven invalidation'
+        'Persistent store backends: currently in-memory; SQLDelight or Room (KMP) for app restarts',
+        'Apollo GraphQL adapter: operation-level annotation surface',
+        'Cadence policies: per-entry TTL with background revalidation rather than only mutation-driven invalidation'
       ]
+    },
+    {
+      type: 'prose',
+      content:
+        'Tell me what breaks. Issues at [github.com/logickoder/retrostash](https://github.com/logickoder/retrostash), PRs welcome.'
     }
   ]
 };

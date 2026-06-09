@@ -19,20 +19,20 @@ const appstorys: CaseStudy = {
     {
       type: 'prose',
       content:
-        'Most analytics SDKs require explicit instrumentation — wrapping components, tagging IDs, adding lifecycle observers. That falls apart in mixed UI stacks where the host app is half legacy `View`s, half Compose, with Flutter or React Native widget layers on top. Each rendering tree exposes a different traversal API. There is no one runtime API that maps cleanly across all of them.'
+        'Most analytics SDKs require explicit instrumentation: wrapping components, tagging IDs, adding lifecycle observers. That falls apart in mixed UI stacks where the host app is half legacy `View`s, half Compose, with Flutter or React Native widget layers on top. Each rendering tree exposes a different traversal API. There is no one runtime API that maps cleanly across all of them.'
     },
     { type: 'heading', level: 2, text: 'Approach' },
     {
       type: 'prose',
       content:
-        "Bridge from each platform's introspection primitives to a single normalized event schema, with zero host-app instrumentation. The SDK attaches to lifecycle events and walks whatever tree exists at that moment — `ViewGroup` children, Compose `SemanticsNode`s, Flutter widget metadata exposed via platform channels, React Native UIManager nodes."
+        "Bridge from each platform's introspection primitives to a single normalized event schema, with zero host-app instrumentation. The SDK attaches to lifecycle events and walks whatever tree exists at that moment: `ViewGroup` children, Compose `SemanticsNode`s, Flutter widget metadata exposed via platform channels, React Native UIManager nodes."
     },
     { type: 'heading', level: 2, text: 'Design decisions' },
     { type: 'heading', level: 3, text: 'Reflection-based XML View capture' },
     {
       type: 'prose',
       content:
-        'Standard `ViewGroup.getChildAt(i)` returns the children but loses content data attached to custom views. Reflection on private fields surfaces the actual rendered content — text, image URIs, accessibility labels — without breaking when host apps subclass.'
+        'Standard `ViewGroup.getChildAt(i)` returns the children but loses content data attached to custom views. Reflection on private fields surfaces the actual rendered content (text, image URIs, accessibility labels) without breaking when host apps subclass.'
     },
     { type: 'heading', level: 3, text: 'Compose SemanticsNode traversal' },
     {
@@ -44,14 +44,14 @@ const appstorys: CaseStudy = {
     {
       type: 'prose',
       content:
-        'The Android implementation is the reference. Flutter and React Native ports emit the same event payload by mapping their native introspection APIs into the same normalized shape — so a Flutter screen and a Compose screen produce events the backend treats identically.'
+        'The Android implementation is the reference. Flutter and React Native ports emit the same event payload by mapping their native introspection APIs into the same normalized shape, so a Flutter screen and a Compose screen produce events the backend treats identically.'
     },
     { type: 'heading', level: 2, text: 'Outcome' },
     {
       type: 'list',
       items: [
         'Shipped Android + Flutter + React Native SDKs with a single event schema',
-        'No host-app instrumentation required — drop-in initialization',
+        'No host-app instrumentation required: drop-in initialization',
         'Captures content metadata across both legacy `View` and Compose trees on the same screen, which previously required two separate analytics integrations'
       ]
     }

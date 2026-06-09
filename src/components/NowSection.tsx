@@ -3,7 +3,7 @@
 
 const bullets = [
   'Migrating Medscape legacy WebViews into native Jetpack Compose on MVI',
-  'Shipping Knock and Nag — my own KMP / Compose Multiplatform side apps',
+  'Shipping Knock and Nag: my own KMP / Compose Multiplatform side apps',
   'Maintaining open-source TypeScript GitHub Actions and Python data tooling on the side',
   'Open to senior mobile engineering conversations',
   'Back in the gym after a stretch off'
@@ -21,7 +21,7 @@ export default function NowSection() {
     <section className="px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24 xl:px-40" id="now">
       <div className="container mx-auto max-w-5xl">
         <h2 className="mb-3 text-center font-serif text-3xl leading-tight font-bold tracking-tight sm:text-left sm:text-4xl">
-          Now — {currentMonthYear()}
+          Now · {currentMonthYear()}
         </h2>
         <p className="mb-8 text-center font-mono text-xs tracking-[0.18em] text-gray-400 uppercase sm:mb-12 sm:text-left">
           Current state. Updated monthly.

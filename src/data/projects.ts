@@ -38,7 +38,7 @@ const projects: Project[] = [
   {
     title: 'Nag',
     description:
-      'High-friction persistent-reminder utility on Kotlin Multiplatform (Android-first). Active-Until-Done state with an escalation ladder — full-screen intent, louder vibration, screen-on strobe, continuous alarm. Only an explicit "I Did It" tap stops the loop. Quick Settings tile + app shortcuts for sub-second entry.',
+      'High-friction persistent-reminder utility on Kotlin Multiplatform (Android-first). Active-Until-Done state with an escalation ladder: full-screen intent, louder vibration, screen-on strobe, continuous alarm. Only an explicit "I Did It" tap stops the loop. Quick Settings tile + app shortcuts for sub-second entry.',
     technologies: ['Kotlin Multiplatform', 'Compose Multiplatform', 'AlarmManager'],
     category: 'Mobile',
     featured: true,
@@ -128,7 +128,7 @@ const projects: Project[] = [
   {
     title: 'Sub-Millisecond Lambda Sniper (private)',
     description:
-      'Stateless Node.js micro-VM on AWS Lambda hitting sub-millisecond firing precision. Built on `hrtime` spin-locks, NoDelay/TCP_NODELAY pinned `https.Agent` pool, HTTP/2 multiplexed burst with cork+uncork, NTP-style clock-skew compensation, dynamic per-IP calibration, seeded PRNG scheduling, and air-gapped Telegram telemetry. Techniques abstracted — repo private, no target attribution.',
+      'Stateless Node.js micro-VM on AWS Lambda hitting sub-millisecond firing precision. Built on `hrtime` spin-locks, NoDelay/TCP_NODELAY pinned `https.Agent` pool, HTTP/2 multiplexed burst with cork+uncork, NTP-style clock-skew compensation, dynamic per-IP calibration, seeded PRNG scheduling, and air-gapped Telegram telemetry. Techniques abstracted. Repo private, no target attribution.',
     technologies: ['TypeScript', 'Node.js', 'AWS Lambda', 'HTTP/2'],
     category: 'Full-Stack',
     featured: false,
