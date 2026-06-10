@@ -1,6 +1,6 @@
 # logickoder.dev
 
-Personal portfolio for **Jeffery Orazulike** — Senior Mobile Engineer.
+Personal portfolio for **Jeffery Orazulike** · Senior Mobile Engineer.
 
 Built with React 19 + Vite 6 + Tailwind CSS v4 + TypeScript. Hosted on GitHub Pages.
 
@@ -28,7 +28,7 @@ pnpm format   # Prettier
 | Analytics    | Firebase Analytics                      |
 | Type display | Fraunces (serif), Inter (sans), JetBrains Mono (mono) |
 
-No Tailwind config file — tokens live in `src/main.css` under `@theme`.
+No Tailwind config file. Tokens live in `src/main.css` under `@theme`.
 
 ## Structure
 
