@@ -27,7 +27,7 @@ const skills = [
   {
     icon: DevOpsIcon,
     title: 'Backend & Cloud',
-    skills: ['Node.js (Express)', 'AWS Lambda', 'MongoDB', 'PostgreSQL', 'Firebase']
+    skills: ['Python (FastAPI)', 'Node.js (Express)', 'AWS Lambda', 'Hetzner + caddy-docker-proxy', 'MongoDB', 'PostgreSQL', 'Firebase']
   },
   {
     icon: CodeIcon,

@@ -30,6 +30,19 @@ export default function AboutSection() {
             native Jetpack Compose on a strict MVI architecture.
           </p>
           <p className="text-base font-normal leading-relaxed text-gray-300 sm:text-lg sm:leading-loose">
+            Shipping{' '}
+            <a
+              href="https://bankstract.logickoder.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              bankstract
+            </a>
+            : open-source bank-statement parsing engine and hosted SaaS for Nigerian banks.
+            AGPL-3.0, verifiable self-host bundle.
+          </p>
+          <p className="text-base font-normal leading-relaxed text-gray-300 sm:text-lg sm:leading-loose">
             Maintaining{' '}
             <a
               href="https://logickoder.dev/retrostash"

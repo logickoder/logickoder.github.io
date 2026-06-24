@@ -45,10 +45,11 @@ export default function HeroSection() {
             className="animate-hero-rise mt-8 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg sm:leading-loose"
             style={{ animationDelay: '0.5s' }}
           >
-            I ship infrastructure. Retrostash (KMP caching library on Maven Central), custom
-            Android launchers, low-latency Lambdas, KMP and Compose Multiplatform shipped at scale.
-            Currently working with the WebMD / Medscape team. Migrating legacy WebViews into
-            native Jetpack Compose. 6 years in.
+            I ship infrastructure. bankstract (open-source bank-statement parsing engine and
+            hosted SaaS, live at bankstract.logickoder.dev), Retrostash (KMP caching library on
+            Maven Central), custom Android launchers, low-latency Lambdas, KMP and Compose
+            Multiplatform shipped at scale. Currently working with the WebMD / Medscape team.
+            Migrating legacy WebViews into native Jetpack Compose. 6 years in.
           </p>
 
           <div

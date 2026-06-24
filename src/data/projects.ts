@@ -14,6 +14,27 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    title: 'bankstract',
+    description:
+      'Open-source Python engine and hosted SaaS for parsing Nigerian bank statements. Four parsers ship (FBN, Opay, PalmPay, Zenith) on a typed ParseError hierarchy, ContextVar-backed progress emit, and full lifecycle hooks. Processing stays in memory, no disk writes. Hosted on Hetzner CAX11 behind caddy-docker-proxy with Better Auth, Drizzle + libSQL/Turso, Paystack subscriptions, and an SSE long-poll job runner with HMAC capability tokens. AGPL-3.0, verifiable self-host bundle ships with the repo.',
+    technologies: [
+      'Python',
+      'FastAPI',
+      'Next.js',
+      'TypeScript',
+      'Better Auth',
+      'Drizzle',
+      'Hetzner',
+      'Caddy',
+      'AGPL-3.0'
+    ],
+    category: 'Full-Stack',
+    githubUrl: 'https://github.com/logickoder/bankstract',
+    liveUrl: 'https://bankstract.logickoder.dev',
+    featured: true,
+    year: 2026
+  },
+  {
     title: 'Retrostash',
     description:
       "Annotation-driven KMP caching library for Retrofit, OkHttp, and Ktor. Solves POST-query caching (GraphQL, search) and mutation-driven cache invalidation that stock OkHttp can't. Published to Maven Central and Swift Package Manager. Targets Android, JVM, iOS, and wasmJs.",

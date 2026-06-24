@@ -2,9 +2,9 @@
 // Bullet content is the manual edit each month.
 
 const bullets = [
+  'Shipping bankstract: open-source bank-statement parsing engine and hosted SaaS, live at bankstract.logickoder.dev',
   'Migrating Medscape legacy WebViews into native Jetpack Compose on MVI',
   'Shipping Knock and Nag: my own KMP / Compose Multiplatform side apps',
-  'Maintaining open-source TypeScript GitHub Actions and Python data tooling on the side',
   'Open to senior mobile engineering conversations',
   'Back in the gym after a stretch off'
 ];
