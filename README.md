@@ -1,61 +1,64 @@
 # logickoder.dev
 
-Personal portfolio for **Jeffery Orazulike** · Senior Mobile Engineer.
+Personal site for **Jeffery Orazulike** · Software & AI Engineer.
 
-Built with React 19 + Vite 6 + Tailwind CSS v4 + TypeScript. Hosted on GitHub Pages.
+Next.js 16 (App Router) + Tailwind CSS v4 + TypeScript, exported as a static site and hosted on GitHub Pages.
 
 ## Quick start
 
 ```bash
 pnpm install
-pnpm dev      # http://localhost:5173
-pnpm build    # → dist/
-pnpm preview  # serve the production build
-pnpm lint     # ESLint (zero-warnings gate)
-pnpm format   # Prettier
+pnpm dev        # http://localhost:3000
+pnpm build      # static export → out/
+pnpm typecheck  # tsc --noEmit
+pnpm lint       # ESLint (zero-warnings gate)
 ```
+
+## Why static on GitHub Pages
+
+This repo is the user site, so it owns `logickoder.dev`. Project sites from other repos
+(`/retrostash/`, `/redactly/`, `/keyguarde/`, `/21DaysOfCode/`) resolve under the same domain
+only while this site stays on GitHub Pages. `public/app-ads.txt` must stay at the domain root for AdMob.
 
 ## Stack
 
-| Concern      | Choice                                  |
-| ------------ | --------------------------------------- |
-| Language     | TypeScript                              |
-| Build / dev  | Vite 6                                  |
-| UI runtime   | React 19                                |
-| Styling      | Tailwind CSS v4 (`@theme` in `main.css`)|
-| Routing      | `react-router-dom` (HashRouter for GitHub Pages) |
-| SEO / meta   | `react-helmet-async`                    |
-| Analytics    | Firebase Analytics                      |
-| Type display | Fraunces (serif), Inter (sans), JetBrains Mono (mono) |
-
-No Tailwind config file. Tokens live in `src/main.css` under `@theme`.
+| Concern       | Choice                                                                 |
+| ------------- | ---------------------------------------------------------------------- |
+| Framework     | Next.js 16, `output: 'export'`, `trailingSlash: true`                   |
+| Styling       | Tailwind CSS v4, tokens in `src/app/globals.css` (`@theme inline`)      |
+| Type          | Anton (display), Inter (body), Instrument Serif (accents), JetBrains Mono (metadata) via `next/font` |
+| Theme         | `html[data-theme]` set before paint: dark by default, light only after the visitor switches. Sun/moon toggle saves to `localStorage` (`logickoder-theme`). Never follows `prefers-color-scheme`. |
+| Social images | `next/og`, rendered at build to `/og/home.png` and `/og/<slug>.png`     |
+| Writing feed  | Substack + Medium RSS read at build (`src/lib/feeds.ts`), fallback list if a feed is down |
+| Analytics     | PostHog (US cloud), loaded after hydration. `NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN` and `NEXT_PUBLIC_POSTHOG_HOST` come from repository variables (`.env.local` locally). Named events via `data-track` attributes; see `src/components/site/Analytics.tsx`. |
 
 ## Structure
 
 ```
 src/
-  components/    UI components (Header, Hero, Project*, CaseStudy*, etc.)
-  pages/         HomePage · ProjectsPage · ProjectDetailPage · WritingPage
-  data/          projects.ts · skills.ts · navigation.ts · socialLinks.ts
-                 case-studies/ (per-slug structured case study data)
-  hooks/         useAnalytics · useSmoothScroll · useProjectActions
-  services/      mediumService.ts (RSS aggregator: Substack + Medium)
-  config/        firebase.ts
-  main.css       Tailwind import + @theme tokens + body styles
-  App.tsx        Router + lazy-loaded secondary routes
+  app/            routes: / · /projects · /projects/[slug] · /writing · not-found
+                  og/[image]/ (social PNGs) · apple-touch-icon.png/ · icon.svg · sitemap · robots
+  components/
+    site/         Shell (header, footer, page frame) · ThemeToggle · Analytics
+    home/         Schematic (FYP, generic until submission) · Minis (project windows)
+    projects/     ProjectIndex (filter + year groups)
+    case-study/   Diagrams · Toc · Inline (minimal markdown)
+  data/           projects.ts (featured: 1–4 drives the home page) · site.ts · case-studies/
+  lib/            feeds.ts · og.tsx
 ```
 
-## Routes
+## Content rules
 
-| Path                    | Purpose                                 |
-| ----------------------- | --------------------------------------- |
-| `/`                     | Homepage (hero, about, /now, skills, projects, blog preview, contact) |
-| `/projects`             | Full project archive with category filter |
-| `/projects/:slug`       | Case study deep-dive                    |
-| `/writing`              | Substack + Medium RSS aggregator        |
+- Home page shows four `featured` projects: verifiable (live link or public repo), backs the
+  headline, shipped or updated in the last 12 months, nothing confidential.
+- Grimaldi and other client work: CV-level detail only, no links.
+- The FYP schematic stays generic until submission: one sensor only (the AC clamp), no battery-side sensing, no shunt or I²C labels, no part numbers, no time-left output. Check this every time `src/assets/schematic.drawio` changes.
 
 ## Deploy
 
-Static build (`pnpm build`) → push `dist/` to the `gh-pages` branch via existing GitHub Pages workflow.
+PostHog settings come from repository variables (`NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN`, `NEXT_PUBLIC_POSTHOG_HOST`), set in the build step. The old `ENV_FILE_CONTENT` secret is no longer read.
 
-HashRouter is used so deep links (`#/projects/retrostash`) survive direct visits and refreshes without a 404 fallback.
+`.github/workflows/deploy.yml` builds and deploys `out/` on push to `main`, on manual dispatch,
+and weekly on Monday at 05:00 UTC so new posts show up. To publish a post sooner, run the workflow by hand (Actions → "Deploy website to Pages" → Run workflow).
+
+Old HashRouter links (`/#/projects/x`) are forwarded to `/projects/x` by the pre-paint script.
