@@ -9,6 +9,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Weekly rebuild (Monday 05:00 UTC) picks up new Substack/Medium posts.
+  # For a post you want live sooner: Actions → "Deploy website to Pages" → Run workflow.
+  schedule:
+    - cron: "0 5 * * 1"
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -28,22 +33,24 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Create .env File
-        run: echo "${{ secrets.ENV_FILE_CONTENT }}" > .env
-
       - uses: pnpm/action-setup@v5
 
       - name: Install dependencies
         run: pnpm install
 
+      # PostHog's project token is public (it ships in the browser bundle), so it
+      # lives in repository variables, not secrets.
       - name: Build project
         run: pnpm run build
+        env:
+          NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN: ${{ vars.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN }}
+          NEXT_PUBLIC_POSTHOG_HOST: ${{ vars.NEXT_PUBLIC_POSTHOG_HOST }}
 
       - name: Upload build files
         uses: actions/upload-artifact@v4
         with:
           name: build
-          path: ./dist
+          path: ./out
 
   deploy:
     needs: build
@@ -56,7 +63,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: build
-          path: ./dist
+          path: ./out
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
@@ -64,7 +71,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: "./dist"
+          path: "./out"
 
       - name: Deploy to GitHub Pages
         id: deployment
