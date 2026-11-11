@@ -104,7 +104,7 @@ const retrostash: CaseStudy = {
     {
       type: 'list',
       items: [
-        'Published to Maven Central at `dev.logickoder:retrostash-{okhttp,ktor}:0.0.12`',
+        'Published to Maven Central at `dev.logickoder:retrostash-{okhttp,ktor}:0.0.13`',
         'Published to Swift Package Manager for iOS consumers',
         'Live playground at logickoder.dev/retrostash/playground demonstrating the three transports + tag invalidation',
         'Full KDoc on the public surface; integration tests covering OkHttp, Ktor, mutation invalidation',

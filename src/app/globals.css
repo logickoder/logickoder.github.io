@@ -1,0 +1,269 @@
+@import 'tailwindcss';
+
+/* Theme tokens. html[data-theme] is set before first paint by the inline
+   script in layout.tsx: dark by default, light only when the visitor switched
+   to it (saved in localStorage). Never follows prefers-color-scheme. */
+html[data-theme='light'] {
+  --bg: #f6f4f0;
+  --surface: #ffffff;
+  --track: #ece8e1;
+  --fg: #141414;
+  --fg2: #3a3936;
+  --fg3: #6b6964;
+  --line: #e2ded6;
+  --line2: #bdb8ae;
+  --accent: #d2691e;
+  --acc: #a8501a; /* accent as text: 4.99:1 on --bg */
+  --on-accent: #0b0b0b;
+  color-scheme: light;
+}
+
+:root,
+html[data-theme='dark'] {
+  --bg: #0b0b0b;
+  --surface: #131313;
+  --track: #1e1e1e;
+  --fg: #f2f2f2;
+  --fg2: #c4c4c4;
+  --fg3: #a3a3a3;
+  --line: #2a2a2a;
+  --line2: #4a4a4a;
+  --accent: #d2691e;
+  --acc: #e07a2e; /* accent as text: 6.55:1 on --bg */
+  --on-accent: #0b0b0b;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-track: var(--track);
+  --color-fg: var(--fg);
+  --color-fg2: var(--fg2);
+  --color-fg3: var(--fg3);
+  --color-line: var(--line);
+  --color-line2: var(--line2);
+  --color-accent: var(--accent);
+  --color-acc: var(--acc);
+  --color-on-accent: var(--on-accent);
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-anton), Impact, sans-serif;
+  --font-serif: var(--font-instrument), Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+html {
+  background: var(--bg);
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Theme-dependent visibility for icons that must not cause a hydration mismatch. */
+html[data-theme='dark'] .only-light,
+html[data-theme='light'] .only-dark {
+  display: none;
+}
+
+/* Page frame: column rules on wide screens only. */
+.frame {
+  border-inline: 1px solid var(--line);
+}
+@container page (max-width: 640px) {
+  .frame {
+    border-inline: none;
+  }
+}
+
+/* draw.io schematic (home): scale to the band, keep theme colors. */
+.schematic-wrap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Current along the schematic wires. */
+.flow {
+  animation: flow 2.4s linear infinite;
+}
+@keyframes flow {
+  to {
+    stroke-dashoffset: -36;
+  }
+}
+.spark {
+  animation: spark 1.6s steps(2, end) infinite;
+}
+@keyframes spark {
+  50% {
+    opacity: 0.15;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flow,
+  .spark {
+    animation: none;
+  }
+}
+
+/* Entrance motion. Runs only when the pre-paint script ran (data-js), so
+   content never stays hidden without JS, and never under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  /* Hero: label, headline, intro rise in once on load. */
+  html[data-js] .rise > * {
+    animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  html[data-js] .rise > :nth-child(2) {
+    animation-delay: 0.12s;
+  }
+  html[data-js] .rise > :nth-child(3) {
+    animation-delay: 0.24s;
+  }
+
+  /* Mini-UIs: each .seq child plays in order once its <Reveal> scrolls into
+     view. --i is the child's index, --step the gap, --d an extra lead-in. */
+  html[data-js] [data-inview] .seq > * {
+    opacity: 0;
+  }
+  html[data-js] [data-inview='true'] .seq > * {
+    animation: seq-in 0.45s ease-out both;
+    animation-delay: calc(var(--d, 0ms) + var(--i, 0) * var(--step, 200ms));
+  }
+  html[data-js] [data-inview='true'] .seq.type > * {
+    animation-name: type;
+    animation-duration: 0.6s;
+    animation-timing-function: steps(24, end);
+  }
+  html[data-js] [data-inview='true'] .hop {
+    animation: hop 0.9s ease-in-out both;
+    animation-delay: var(--hop, 0ms);
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+@keyframes seq-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  /* Explicit end frame: the resting style is opacity 0 (hidden until played). */
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes type {
+  from {
+    opacity: 1;
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes hop {
+  40% {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+  }
+}
+
+/* Theme switch: a circle grows from the toggle (ThemeToggle drives it). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Case-study diagrams: boxes and arrows. */
+.dg-row {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.dg-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dg-n {
+  flex: 0 1 auto;
+  min-width: 120px;
+  border: 1px solid var(--line2);
+  border-radius: 10px;
+  background: var(--bg);
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--fg);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.dg-n small {
+  font-size: 11px;
+  color: var(--fg3);
+}
+.dg-n.k {
+  border: 1.5px solid var(--accent);
+}
+.dg-n.k small {
+  color: var(--acc);
+}
+.dg-n.ghost {
+  border-style: dashed;
+  background: transparent;
+}
+.dg-w {
+  flex: 1 1 32px;
+  min-width: 28px;
+  height: 1.5px;
+  background: var(--line2);
+  position: relative;
+  margin: 0 6px;
+}
+.dg-w::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: -4px;
+  border: 4.5px solid transparent;
+  border-left: 7px solid var(--line2);
+  border-right: 0;
+}
+.dg-w.a {
+  background: var(--accent);
+}
+.dg-w.a::after {
+  border-left-color: var(--accent);
+}

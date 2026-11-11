@@ -4,13 +4,13 @@ import appstorys from './appstorys';
 import knock from './knock';
 import nag from './nag';
 import firebaseDistribution from './firebase-distribution';
+import bankstract from './bankstract';
+import agentBridge from './agent-bridge';
+import redactly from './redactly';
+import zeduReviewInfra from './zedu-review-infra';
+import walletImporter from './wallet-importer';
 
-export type {
-  CaseStudy,
-  CaseStudySection,
-  CaseStudyLink,
-  CaseStudyBadge
-} from './types';
+export type { CaseStudySection } from './types';
 
 export function getAdjacentCaseStudies(slug: string): {
   prev?: CaseStudy;
@@ -19,10 +19,7 @@ export function getAdjacentCaseStudies(slug: string): {
   const list = listCaseStudies();
   const index = list.findIndex((entry) => entry.slug === slug);
   if (index === -1) return {};
-  return {
-    prev: index > 0 ? list[index - 1] : undefined,
-    next: index < list.length - 1 ? list[index + 1] : undefined
-  };
+  return { prev: list[index - 1], next: list[index + 1] };
 }
 
 export function estimateReadingMinutes(study: CaseStudy): number {
@@ -55,6 +52,11 @@ function countWords(text: string): number {
 }
 
 const caseStudies: Record<string, CaseStudy> = {
+  [bankstract.slug]: bankstract,
+  [agentBridge.slug]: agentBridge,
+  [redactly.slug]: redactly,
+  [zeduReviewInfra.slug]: zeduReviewInfra,
+  [walletImporter.slug]: walletImporter,
   [retrostash.slug]: retrostash,
   [appstorys.slug]: appstorys,
   [knock.slug]: knock,
