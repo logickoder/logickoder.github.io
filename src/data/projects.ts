@@ -42,7 +42,7 @@ const projects: Project[] = [
     category: 'Mobile',
     title: 'Releasing App',
     kind: 'Compose Multiplatform · in production',
-    line: 'Cargo-releasing app for PTML terminal operators. Owned since 2022: printing, GPS and terminal maps, camera capture, encrypted traffic, one build per company and server. Then moved it to Compose Multiplatform: one codebase on Android (production), desktop, web (Wasm) and a native CLI.',
+    line: 'Cargo-releasing app for PTML terminal operators. Owned since 2022: printing, GPS and terminal maps, camera capture, encrypted traffic, one build per company and server. Then moved it to Compose Multiplatform: one codebase on Android (production), desktop, web (Wasm) and a native CLI that QA and agents use to test the API through the app\'s own network stack.',
     stack: 'Kotlin Multiplatform · Compose Multiplatform · Ktor · Room',
     links: []
   },
@@ -67,10 +67,10 @@ const projects: Project[] = [
   {
     group: 'grimaldi',
     category: 'Tools',
-    title: 'PTML Releases',
-    kind: 'Release tooling · whole stack',
-    line: 'Release tooling for every app in the stack: generates per-app and shared build values, renames APKs by application ID and version, and writes the final release output.',
-    stack: 'Python',
+    title: 'PTML Downloads',
+    kind: 'Release pipeline · downloads site',
+    line: 'Release pipeline for the whole stack, moving releases off a Google Drive flow. Shared GitHub workflows build each app per company and server, publish canaries, and promote only builds from merged commits, checked file by file. Staff get builds from a site behind company sign-in, or share one file through a link that expires.',
+    stack: 'Python · GitHub Actions · TypeScript · Hono · Cloudflare Workers · D1',
     links: []
   },
   {
